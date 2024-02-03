@@ -1,8 +1,11 @@
 package pages;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class LkBiographyPage extends AbsBasePage {
+    private Logger logger = (Logger) LogManager.getLogger("Autotest");
 
     private String inputDataTemplate = "input[data-title ='%s']";
 

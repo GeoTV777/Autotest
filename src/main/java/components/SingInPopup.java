@@ -30,7 +30,7 @@ public class SingInPopup extends AbsCommon implements IPopup {
         String warningNameSelector = "[fill-rule='nonzero']";
         String inputPassClickLocator = "//input[@type='password']/..";
         String inputPassLocator = "//input[@type='password']";
-//        String btnEntrySelector = "#__PORTAL__ button";
+
 
         waitTools.waitElementPresent(By.xpath(headerSignInButton));
         driver.findElement(By.xpath(headerSignInButton)).click();
@@ -65,9 +65,7 @@ public class SingInPopup extends AbsCommon implements IPopup {
         waitTools.waitElementToBeClickable(By.xpath(buttonLkLocator));
         driver.findElement(By.xpath(buttonLkLocator)).click();
         logger.info("LK is open");
-        
     }
-
 
     @Override
     public void popupShouldNotBeVisible() {

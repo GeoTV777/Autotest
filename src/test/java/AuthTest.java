@@ -38,12 +38,13 @@ public class AuthTest {
     public void authHomepage() {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);
-
+        LkHomePage homePage = new LkHomePage(driver);
 
         basePage.open();
         singInPopup.authorization();
         singInPopup.enterHeaderIconOwl();
         singInPopup.selectLkInMenu();
+        homePage.setSelectTabAboutMe();
 
 
     }
