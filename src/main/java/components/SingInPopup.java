@@ -39,6 +39,7 @@ public class SingInPopup extends AbsCommon implements IPopup {
         popupShouldBeVisible();
 
         waitTools.waitElementPresent(By.cssSelector(signInPopupSelector));
+        waitTools.waitElementToBeClickable(By.xpath(inputNameClickLocator));
         driver.findElement(By.xpath(inputNameClickLocator)).click();
         driver.findElement(By.xpath(inputNameLocator)).sendKeys(login);
         waitTools.waitElementPresent(By.cssSelector(warningNameSelector));

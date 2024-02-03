@@ -1,5 +1,7 @@
 import common.AbsCommon;
 import components.SingInPopup;
+import data.sities.CountriesData;
+import data.sities.RussianCitiesData;
 import factory.DriverFactory;
 import factory.settings.ChromeDriverSettings;
 import org.apache.logging.log4j.LogManager;
@@ -9,6 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import pages.AbsBasePage;
+import pages.LkBiographyPage;
 import pages.LkHomePage;
 import tools.WaitTools;
 
@@ -39,14 +42,17 @@ public class AuthTest {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);
         LkHomePage homePage = new LkHomePage(driver);
+        LkBiographyPage biographyPage = new LkBiographyPage(driver);
 
         basePage.open();
         singInPopup.authorization();
         singInPopup.enterHeaderIconOwl();
         singInPopup.selectLkInMenu();
         homePage.setSelectTabAboutMe();
+        biographyPage.selectCountryAndCity(CountriesData.RUSSIA, RussianCitiesData.SAINTPETERBURG);
 
 
     }
+
 
 }
