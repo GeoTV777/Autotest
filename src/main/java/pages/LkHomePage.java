@@ -13,6 +13,7 @@ public class LkHomePage extends AbsBasePage {
     }
     public void setSelectTabAboutMe(){
         String selectTabAboutMeSelector = "[title='О себе']";
+
         driver.findElement(By.cssSelector(selectTabAboutMeSelector)).click();
         logger.info("Tab About_Me selected ");
     }

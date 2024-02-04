@@ -2,6 +2,7 @@ package data.sities;
 
 public enum RussianCitiesData implements ICityData {
     SAINTPETERBURG("Санкт-Петербург", CountriesData.RUSSIA);
+
     private String name;
     private CountriesData countriesData;
 
