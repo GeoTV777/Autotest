@@ -1,13 +1,8 @@
 package data.personal;
 
 public enum PersonalData {
-
-    NAME("Татьяна"),
-    NAMELAT("Tatyana"),
-
-    SURNAME("Гео"),
-    NAMECHAT("Tatyana"),
-
+    NAMELAT("Eleonora"),
+    SURNAMELAT("Rul"),
     DATE("07.08.2007");
 
     private String name;

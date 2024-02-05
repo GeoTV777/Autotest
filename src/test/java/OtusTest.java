@@ -1,6 +1,6 @@
-import common.AbsCommon;
 import components.SingInPopup;
-import data.sities.CountriesData;
+import data.personal.PersonalData;
+import data.sities.ICityData;
 import data.sities.RussianCitiesData;
 import factory.DriverFactory;
 import factory.settings.ChromeDriverSettings;
@@ -15,7 +15,7 @@ import pages.LkBiographyPage;
 import pages.LkHomePage;
 import tools.WaitTools;
 
-public class AuthTest {
+public class OtusTest {
 
     private WebDriver driver;
     private WaitTools waitTools;
@@ -42,7 +42,6 @@ public class AuthTest {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);
         LkHomePage homePage = new LkHomePage(driver);
-        LkBiographyPage biographyPage = new LkBiographyPage(driver);
 
         basePage.open();
         singInPopup.authorization();
@@ -52,5 +51,18 @@ public class AuthTest {
 
     }
 
+    @Test
+    public void enterLkPersonalInfo() {
+        LkBiographyPage biographyPage = new LkBiographyPage(driver);
+
+        biographyPage.inputFioAndData(PersonalData.NAMELAT);
+        biographyPage.inputFioAndData(PersonalData.SURNAMELAT);
+        biographyPage.inputFioAndData(PersonalData.DATE);
+
+        ICityData cityData= RussianCitiesData.SAINTPETERBURG;
+        biographyPage.selectCity(cityData);
+    }
 
 }
+
+

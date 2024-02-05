@@ -6,11 +6,11 @@ public enum ContactsData {
     TELEGRAMM("+79818077777"),
     WHATSUPP("+79818077777");
 
-    public String contact;
+    public String name;
     ContactsData(String contact){
-        this.contact = contact;
+        this.name= contact;
     }
-    public String getContact() {
-        return contact;
+    public String getName() {
+        return name;
     }
 }

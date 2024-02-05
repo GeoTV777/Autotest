@@ -1,9 +1,8 @@
 package data.personal;
 
 public enum CompanyData {
-
-    COMPANY(""),
-    POSITION("");
+    COMPANY("ООО ГАЗ"),
+    POSITION("менеджер");
 
     private String name;
     CompanyData(String name) {

@@ -12,8 +12,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-import javax.lang.model.element.Name;
-
 public class LkBiographyPage extends AbsBasePage {
 
     public LkBiographyPage(WebDriver driver) {
@@ -24,27 +22,17 @@ public class LkBiographyPage extends AbsBasePage {
 
 
     public void inputFioAndData(PersonalData personalData) {
-        String inputDataTemplate = "input[data-title ='%s']";
-        String inputNameClickSelector = String.format(inputDataTemplate,"Имя");
-        String inputSurnameSelector = String.format(inputDataTemplate,"Фамилия");
-    //  у остальных элементов нет такого датат тайтла, соответственно в обычном порядке писать селекторы
+       WebElement inputNameLat = driver.findElement(By.id("id_fname_latin"));
+       inputNameLat.click();
+       inputNameLat.sendKeys(PersonalData.NAMELAT.getName());
 
-        WebElement inputName = driver.findElement(By.cssSelector(inputNameClickSelector));
-        inputName.click();
-        waitTools.waitElementToBeClickable(By.cssSelector(inputNameClickSelector));
-        inputName.sendKeys(personalData.toString());
-        logger.info("Name entered");
+       WebElement inputSurnameLat = driver.findElement(By.id("id_lname_latin"));
+       inputSurnameLat.click();
+       inputSurnameLat.sendKeys(PersonalData.SURNAMELAT.getName());
 
-        WebElement inputSurname = driver.findElement(By.cssSelector(inputSurnameSelector));
-        inputName.click();
-        waitTools.waitElementToBeClickable(By.cssSelector(inputSurnameSelector));
-        inputSurname.sendKeys(personalData.toString());
-        logger.info("Surname entered");
-
-    }
-
-    public void inputDateOfBirth(PersonalData personalData) {
-
+       WebElement inputDate = driver.findElement(By.cssSelector("[title='День рождения']"));
+       inputDate.click();
+       inputDate.sendKeys(PersonalData.DATE.getName());
     }
 
 
@@ -53,8 +41,10 @@ public class LkBiographyPage extends AbsBasePage {
                 (By.cssSelector("[data-slave-selector='.js-lk-cv-dependent-slave-city']"));
         russiaSelectElement.click();
 
-        WebElement citiesListContainer = russiaSelectElement.findElement(By.xpath("//*[contains@class.'js-custom-select-options-container']"));
-        waitTools.waitForCondition(ExpectedConditions.not(ExpectedConditions.attributeContains(citiesListContainer, "class", "hide")));
+        WebElement citiesListContainer = russiaSelectElement.findElement
+                (By.xpath("//*[contains@class.'js-custom-select-options-container']"));
+        waitTools.waitForCondition(ExpectedConditions.not
+                (ExpectedConditions.attributeContains(citiesListContainer, "class", "hide")));
 
         driver.findElement(By.cssSelector(String.format("[title='%s']", cityData.getCountriesData().getName())));
         waitTools.waitForCondition(ExpectedConditions.attributeContains(citiesListContainer, "class", "hide"));
@@ -62,6 +52,7 @@ public class LkBiographyPage extends AbsBasePage {
     }
 
     public void selectEnglishLevel() {
+
 
     }
 
@@ -90,14 +81,14 @@ public class LkBiographyPage extends AbsBasePage {
 
     }
 
-    public void save() {
-        String btnSaveAndContinueSelector = "[name='continue']";
-
-        driver.findElement(By.cssSelector(btnSaveAndContinueSelector));
-        waitTools.waitNotElementPresent(By.cssSelector(btnSaveAndContinueSelector));
-        logger.info("Data saved");
-
-    }
+//    public void save() {
+//        String btnSaveAndContinueSelector = "[name='continue']";
+//
+//        driver.findElement(By.cssSelector(btnSaveAndContinueSelector));
+//        waitTools.waitNotElementPresent(By.cssSelector(btnSaveAndContinueSelector));
+//        logger.info("Data saved");
+//
+//    }
 
 
 
