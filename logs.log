@@ -17,3 +17,11 @@
 2024-02-05 17:55:02,613 INFO Autotest [main] Close browser
 2024-02-05 17:55:03,583 INFO Autotest [main] Open browser
 2024-02-05 17:55:03,597 INFO Autotest [main] Close browser
+2024-02-06 15:25:25,663 INFO Autotest [main] Open browser
+2024-02-06 15:25:32,519 INFO Autotest [main] Login button pressed
+2024-02-06 15:25:53,382 INFO Autotest [main] Button Ok
+2024-02-06 15:25:53,382 INFO Autotest [main] Authorization completed
+2024-02-06 15:25:57,271 INFO Autotest [main] Owl button hovered
+2024-02-06 15:26:43,422 INFO Autotest [main] LK is open
+2024-02-06 15:27:26,898 INFO Autotest [main] Tab About_Me selected 
+2024-02-06 15:27:26,900 INFO Autotest [main] Close browser

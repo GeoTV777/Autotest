@@ -7,8 +7,8 @@ public enum ContactsData {
     WHATSUPP("+79818077777");
 
     public String name;
-    ContactsData(String contact){
-        this.name= contact;
+    ContactsData(String name){
+        this.name= name();
     }
     public String getName() {
         return name;

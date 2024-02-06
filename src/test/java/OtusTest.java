@@ -1,5 +1,7 @@
 import components.SingInPopup;
+import data.personal.EnglishLevelData;
 import data.personal.PersonalData;
+import data.personal.WorkGraphData;
 import data.sities.ICityData;
 import data.sities.RussianCitiesData;
 import factory.DriverFactory;
@@ -42,6 +44,7 @@ public class OtusTest {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);
         LkHomePage homePage = new LkHomePage(driver);
+        LkBiographyPage biographyPage = new LkBiographyPage(driver);
 
         basePage.open();
         singInPopup.authorization();
@@ -49,18 +52,22 @@ public class OtusTest {
         singInPopup.selectLkInMenu();
         homePage.setSelectTabAboutMe();
 
-    }
 
-    @Test
-    public void enterLkPersonalInfo() {
-        LkBiographyPage biographyPage = new LkBiographyPage(driver);
-
+        biographyPage.inputFioAndData(PersonalData.NAME);
+        biographyPage.inputFioAndData(PersonalData.SURNAME);
         biographyPage.inputFioAndData(PersonalData.NAMELAT);
         biographyPage.inputFioAndData(PersonalData.SURNAMELAT);
         biographyPage.inputFioAndData(PersonalData.DATE);
 
         ICityData cityData= RussianCitiesData.SAINTPETERBURG;
         biographyPage.selectCity(cityData);
+        biographyPage.selectEnglishLevel(EnglishLevelData.BEGINNER);
+
+        biographyPage.selectToRelocate(Boolean.parseBoolean("Да"));
+
+        biographyPage.selectWorkGraph(true, WorkGraphData.FLEXIBLE);
+
+
     }
 
 }

@@ -1,6 +1,8 @@
 package data.personal;
 
 public enum PersonalData {
+    NAME("Элеонора"),
+    SURNAME("Руль"),
     NAMELAT("Eleonora"),
     SURNAMELAT("Rul"),
     DATE("07.08.2007");
