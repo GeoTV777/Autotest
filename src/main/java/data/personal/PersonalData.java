@@ -1,11 +1,12 @@
 package data.personal;
 
 public enum PersonalData {
-    NAME("Элеонора"),
-    SURNAME("Руль"),
-    NAMELAT("Eleonora"),
-    SURNAMELAT("Rul"),
-    DATE("07.08.2007");
+    NAME("name"),
+    SURNAME("surName"),
+    NAMELAT("nameLat"),
+    SURNAMELAT("surnameLat"),
+    NAMECHAT("nameChat"),
+    DATE("date");
 
     private String name;
     PersonalData(String name) {

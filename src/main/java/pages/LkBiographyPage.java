@@ -15,32 +15,43 @@ import java.util.Arrays;
 
 public class LkBiographyPage extends AbsBasePage {
 
+//    private  String selectTabAboutMeSelector = "[title='О себе']";
+
+    //        WebElement inputName = driver.findElement(By.cssSelector(String.format("[data-title='%s']", personalData.getName())));
+//        inputName.click();
+//        inputName.sendKeys(PersonalData.NAME.getName());
+//        WebElement inputSurname = driver.findElement(By.cssSelector(String.format("[data-title='%s']", personalData.getName())));
+//        inputSurname.click();
+//        inputSurname.sendKeys(PersonalData.SURNAME.getName());
+//
+//       WebElement inputNameLat = driver.findElement(By.id("id_fname_latin"));
+//       inputNameLat.click();
+//       inputNameLat.sendKeys(PersonalData.NAMELAT.getName());
+//
+//       WebElement inputSurnameLat = driver.findElement(By.id("id_lname_latin"));
+//       inputSurnameLat.click();
+//       inputSurnameLat.sendKeys(PersonalData.SURNAMELAT.getName());
+//
+//       WebElement inputDate = driver.findElement(By.cssSelector("[title='%s']"));
+//       inputDate.click();
+//       inputDate.sendKeys(PersonalData.DATE.getName());
+//    }
+
     public LkBiographyPage(WebDriver driver) {
         super(driver);
     }
 
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
 
+    public void clearPersData(PersonalData... personalData) {
+        for(PersonalData persData : personalData ){
+            driver.findElement(By.cssSelector(String.format("input[name='%s']", persData.getName()))).clear();
+        }
+    }
 
-    public void inputFioAndData(PersonalData personalData) {
-        WebElement inputName = driver.findElement(By.cssSelector(String.format("[data-title='%s']")));
-        inputName.click();
-        inputName.sendKeys(PersonalData.NAME.getName());
-        WebElement inputSurname = driver.findElement(By.cssSelector(String.format("[data-title='%s']")));
-        inputSurname.click();
-        inputSurname.sendKeys(PersonalData.SURNAME.getName());
+    public void inputFioAndData(PersonalData personalData, String data) {
+         driver.findElement(By.cssSelector(String.format("input[name='%s']'", personalData.getName()))).sendKeys();
 
-       WebElement inputNameLat = driver.findElement(By.id("id_fname_latin"));
-       inputNameLat.click();
-       inputNameLat.sendKeys(PersonalData.NAMELAT.getName());
-
-       WebElement inputSurnameLat = driver.findElement(By.id("id_lname_latin"));
-       inputSurnameLat.click();
-       inputSurnameLat.sendKeys(PersonalData.SURNAMELAT.getName());
-
-       WebElement inputDate = driver.findElement(By.cssSelector("[title='%s']"));
-       inputDate.click();
-       inputDate.sendKeys(PersonalData.DATE.getName());
     }
 
     public void selectCity(ICityData cityData) {
@@ -76,17 +87,17 @@ public class LkBiographyPage extends AbsBasePage {
 
     public void selectToRelocate(boolean isSelected) {
         String relocate = isSelected ? "Да" : "Нет";
-        driver.findElement(By.xpath(String.format("//span[@class='radio__label' and text()='Нет']"))).click();
+        driver.findElement(By.xpath(String.format("//span[@class='radio__label' and text()='%ы']",relocate))).click();
 
     }
 
-    public void selectWorkGraph(boolean isSelekted, WorkGraphData... workGraphDatas) {
+    public void selectWorkGraph(boolean isSelected, WorkGraphData... workGraphDatas) {
 
     for(WorkGraphData workGraphData : workGraphDatas) {
 
         WebElement checkBox = driver.findElement(By.cssSelector(String.format("input[title='%s']", workGraphData.getName())));
 
-        if(checkBox.isSelected() != isSelekted) {
+        if(checkBox.isSelected() != isSelected) {
             checkBox.click();
         }
     }
