@@ -1,8 +1,6 @@
 import com.github.javafaker.Faker;
 import components.SingInPopup;
-import data.personal.EnglishLevelData;
 import data.personal.PersonalData;
-import data.personal.WorkGraphData;
 import data.sities.ICityData;
 import data.sities.RussianCitiesData;
 import factory.DriverFactory;
@@ -16,7 +14,6 @@ import org.openqa.selenium.WebDriver;
 import pages.AbsBasePage;
 import pages.LkBiographyPage;
 import pages.LkHomePage;
-import tools.WaitTools;
 
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -25,7 +22,6 @@ public class OtusTest {
 
     private WebDriver driver;
 //    private WaitTools waitTools;
-    private Faker faker;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
 
 
@@ -51,6 +47,7 @@ public class OtusTest {
         SingInPopup singInPopup = new SingInPopup(driver);
         LkHomePage homePage = new LkHomePage(driver);
         LkBiographyPage biographyPage = new LkBiographyPage(driver);
+        Faker faker = new Faker();
 
         basePage.open();
         singInPopup.authorization();
@@ -60,21 +57,22 @@ public class OtusTest {
 
         biographyPage.clearPersData(PersonalData.NAME, PersonalData.SURNAME, PersonalData.NAMECHAT);
 
-        biographyPage.inputFioAndData(PersonalData.NAME, faker.name().firstName());
-        biographyPage.inputFioAndData(PersonalData.SURNAME, faker.name().lastName());
-        biographyPage.inputFioAndData(PersonalData.NAMELAT, faker.funnyName().name());
-        biographyPage.inputFioAndData(PersonalData.SURNAMELAT, faker.artist().name());
-        biographyPage.inputFioAndData(PersonalData.NAMECHAT, faker.artist().name());
-        biographyPage.inputFioAndData(PersonalData.DATE, faker.date().birthday().toInstant().atZone
-                (ZoneId.systemDefault()).toLocalDate().format(DateTimeFormatter.ofPattern("DD.MM.yyyy")));
+        biographyPage.inputFio(PersonalData.NAME, faker.name().firstName());
+        biographyPage.inputFio(PersonalData.SURNAME, faker.name().lastName());
+        biographyPage.inputFio(PersonalData.NAMELAT, faker.name().firstName());
+        biographyPage.inputFio(PersonalData.SURNAMELAT, faker.name().lastName());
+        biographyPage.inputFio(PersonalData.NAMECHAT, faker.artist().name());
+        biographyPage.inputFio(PersonalData.DATE, faker.date().birthday().toInstant().atZone
+                (ZoneId.systemDefault()).toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 
         ICityData cityData= RussianCitiesData.SAINTPETERBURG;
         biographyPage.selectCity(cityData);
-        biographyPage.selectEnglishLevel(EnglishLevelData.BEGINNER);
-
-        biographyPage.selectToRelocate(Boolean.parseBoolean(String.valueOf(true)));
-
-        biographyPage.selectWorkGraph(true, WorkGraphData.FLEXIBLE);
+//
+//        biographyPage.selectEnglishLevel(EnglishLevelData.BEGINNER);
+//
+//        biographyPage.selectToRelocate(Boolean.parseBoolean(String.valueOf(true)));
+//
+//        biographyPage.selectWorkGraph(true, WorkGraphData.FLEXIBLE);
 
 
     }

@@ -10,12 +10,23 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-import javax.swing.*;
-import java.util.Arrays;
-
 public class LkBiographyPage extends AbsBasePage {
 
-//    private  String selectTabAboutMeSelector = "[title='О себе']";
+
+    //  поле имя id_fname
+    //  поле фамилия id_lname
+    // поле имя лат id_fname_latin
+    // поле фамилия лат id_lname_latin
+     //  поле имя в блоге id_blog_name
+    // поле дата  селектор [title='День рождения']
+    //   [title='О себе']
+
+    //  поле страна [class='lk-cv-block__select-options js-custom-select-options-container']
+    // поле город
+    // поле уровень английского
+
+
+
 
     //        WebElement inputName = driver.findElement(By.cssSelector(String.format("[data-title='%s']", personalData.getName())));
 //        inputName.click();
@@ -46,29 +57,46 @@ public class LkBiographyPage extends AbsBasePage {
     public void clearPersData(PersonalData... personalData) {
         for(PersonalData persData : personalData ){
             driver.findElement(By.cssSelector(String.format("input[name='%s']", persData.getName()))).clear();
+            logger.info("Cleared");
         }
     }
 
-    public void inputFioAndData(PersonalData personalData, String data) {
-         driver.findElement(By.cssSelector(String.format("input[name='%s']'", personalData.getName()))).sendKeys();
+    public void inputFio(PersonalData personalData, String data) {
+                driver.findElement(By.cssSelector(String.format("input[name='%s']", personalData.getName()))).sendKeys(data);
+                logger.info("Data is filled in");
+        }
 
-    }
 
     public void selectCity(ICityData cityData) {
         WebElement russiaSelectElement = driver.findElement
                 (By.cssSelector("[data-slave-selector='.js-lk-cv-dependent-slave-city']"));
         russiaSelectElement.click();
 
-        WebElement citiesListContainer = russiaSelectElement.findElement
-                (By.xpath("//*[contains@class.'js-custom-select-options-container']"));
+        WebElement countriesListContainer = russiaSelectElement.findElement
+                (By.xpath("//button[contains(@title,'Россия')]//..//.."));
         waitTools.waitForCondition(ExpectedConditions.not
-                (ExpectedConditions.attributeContains(citiesListContainer, "class", "hide")));
-        //disabled
-        waitTools.waitForCondition(ExpectedConditions.not
-                (ExpectedConditions.attributeToBe(citiesListContainer, "disabled", "disabled")));
+                (ExpectedConditions.attributeContains(countriesListContainer, "class", "hide")));
+        driver.findElement(By.cssSelector(String.format("[title='%s']", cityData.getCountriesData().getName()))).click();
+        waitTools.waitForCondition(ExpectedConditions.attributeContains(countriesListContainer, "class", "hide"));
+        logger.info("Country selected");
 
-        driver.findElement(By.cssSelector(String.format("[data-title='%s']", cityData.getCountriesData().getName())));
-        waitTools.waitForCondition(ExpectedConditions.attributeContains(citiesListContainer, "class", "hide"));
+
+        WebElement citySelectElement = driver.findElement
+                (By.xpath("//input[contains(@name,'city')]/following-sibling::div"));
+        citySelectElement.click();
+        WebElement citListContainer = citySelectElement.findElement
+
+                //не видит этот локатор
+                (By.xpath("//button[contains(@title,'Россия')]//..//.."));
+        waitTools.waitForCondition(ExpectedConditions.not
+                (ExpectedConditions.attributeContains(citListContainer, "class", "hide")));
+
+         waitTools.waitForCondition(ExpectedConditions.not
+        (ExpectedConditions.attributeToBe(citListContainer, "disabled", "disabled")));
+
+        driver.findElement(By.cssSelector(String.format("[title='%s']", cityData.getCountriesData().getName()))).click();
+
+        waitTools.waitForCondition(ExpectedConditions.attributeContains(citListContainer, "class", "hide"));
         logger.info("City selected");
 
     }
@@ -82,8 +110,8 @@ public class LkBiographyPage extends AbsBasePage {
                 (By.xpath("//div[contains(@class,'lk-cv-block__select-options js-custom-select-options-container')]"));
         waitTools.waitForCondition(ExpectedConditions.not(ExpectedConditions.attributeContains(levelListContainer,"class", "hide")));
         driver.findElement(By.cssSelector(String.format("data-title='%s']",englishLevelData.getName()))).click();
-
     }
+
 
     public void selectToRelocate(boolean isSelected) {
         String relocate = isSelected ? "Да" : "Нет";
