@@ -238,3 +238,128 @@
 2024-02-07 17:50:56,395 INFO Autotest [main] Data is filled in
 2024-02-07 17:50:56,582 INFO Autotest [main] Country selected
 2024-02-07 17:51:16,984 INFO Autotest [main] Close browser
+2024-02-07 19:31:08,623 INFO Autotest [main] Open browser
+2024-02-07 19:31:11,363 INFO Autotest [main] Login button pressed
+2024-02-07 19:31:11,485 INFO Autotest [main] Close browser
+2024-02-07 19:33:55,384 INFO Autotest [main] Open browser
+2024-02-07 19:33:57,905 INFO Autotest [main] Login button pressed
+2024-02-07 19:33:58,000 INFO Autotest [main] Close browser
+2024-02-07 19:35:27,736 INFO Autotest [main] Open browser
+2024-02-07 19:36:09,200 INFO Autotest [main] Login button pressed
+2024-02-07 19:36:09,297 INFO Autotest [main] Close browser
+2024-02-07 19:40:02,378 INFO Autotest [main] Open browser
+2024-02-07 19:40:09,576 INFO Autotest [main] Login button pressed
+2024-02-07 19:40:09,674 INFO Autotest [main] Close browser
+2024-02-07 19:47:35,656 INFO Autotest [main] Open browser
+2024-02-07 19:47:38,027 INFO Autotest [main] Login button pressed
+2024-02-07 19:47:38,129 INFO Autotest [main] Close browser
+2024-02-07 19:49:17,828 INFO Autotest [main] Open browser
+2024-02-07 19:49:20,188 INFO Autotest [main] Login button pressed
+2024-02-07 19:49:20,278 INFO Autotest [main] Close browser
+2024-02-07 19:53:02,258 INFO Autotest [main] Open browser
+2024-02-07 19:53:04,625 INFO Autotest [main] Login button pressed
+2024-02-07 19:53:04,794 INFO Autotest [main] Close browser
+2024-02-07 19:56:47,248 INFO Autotest [main] Open browser
+2024-02-07 19:56:49,510 INFO Autotest [main] Login button pressed
+2024-02-07 19:56:49,601 INFO Autotest [main] Close browser
+2024-02-07 20:02:57,577 INFO Autotest [main] Open browser
+2024-02-07 20:03:01,849 INFO Autotest [main] Login button pressed
+2024-02-07 20:03:01,944 INFO Autotest [main] Close browser
+2024-02-07 20:05:48,174 INFO Autotest [main] Open browser
+2024-02-07 20:06:25,478 INFO Autotest [main] Close browser
+2024-02-07 20:11:05,656 INFO Autotest [main] Open browser
+2024-02-07 20:11:08,012 INFO Autotest [main] Login button pressed
+2024-02-07 20:11:08,109 INFO Autotest [main] Close browser
+2024-02-07 20:12:55,222 INFO Autotest [main] Open browser
+2024-02-07 20:12:57,719 INFO Autotest [main] Login button pressed
+2024-02-07 20:13:18,358 INFO Autotest [main] Button Ok
+2024-02-07 20:13:18,358 INFO Autotest [main] Authorization completed
+2024-02-07 20:13:38,692 INFO Autotest [main] Close browser
+2024-02-07 20:17:21,350 INFO Autotest [main] Open browser
+2024-02-07 20:17:24,077 INFO Autotest [main] Login button pressed
+2024-02-07 20:17:44,756 INFO Autotest [main] Button Ok
+2024-02-07 20:17:44,756 INFO Autotest [main] Authorization completed
+2024-02-07 20:17:46,504 INFO Autotest [main] Owl button hovered
+2024-02-07 20:18:31,705 INFO Autotest [main] LK is open
+2024-02-07 20:19:10,833 INFO Autotest [main] Tab About_Me selected 
+2024-02-07 20:19:10,959 INFO Autotest [main] Cleared
+2024-02-07 20:19:10,983 INFO Autotest [main] Cleared
+2024-02-07 20:19:11,005 INFO Autotest [main] Cleared
+2024-02-07 20:19:11,115 INFO Autotest [main] Data is filled in
+2024-02-07 20:19:11,151 INFO Autotest [main] Data is filled in
+2024-02-07 20:19:11,189 INFO Autotest [main] Data is filled in
+2024-02-07 20:19:11,227 INFO Autotest [main] Data is filled in
+2024-02-07 20:19:11,274 INFO Autotest [main] Data is filled in
+2024-02-07 20:19:11,370 INFO Autotest [main] Data is filled in
+2024-02-07 20:19:11,481 INFO Autotest [main] Country selected
+2024-02-07 20:19:31,779 INFO Autotest [main] Close browser
+2024-02-07 20:20:08,817 INFO Autotest [main] Open browser
+2024-02-07 20:20:11,960 INFO Autotest [main] Login button pressed
+2024-02-07 20:20:32,656 INFO Autotest [main] Button Ok
+2024-02-07 20:20:32,656 INFO Autotest [main] Authorization completed
+2024-02-07 20:20:34,395 INFO Autotest [main] Owl button hovered
+2024-02-07 20:21:17,022 INFO Autotest [main] LK is open
+2024-02-07 20:21:56,666 INFO Autotest [main] Tab About_Me selected 
+2024-02-07 20:21:56,797 INFO Autotest [main] Cleared
+2024-02-07 20:21:56,822 INFO Autotest [main] Cleared
+2024-02-07 20:21:56,845 INFO Autotest [main] Cleared
+2024-02-07 20:21:56,956 INFO Autotest [main] Data is filled in
+2024-02-07 20:21:56,991 INFO Autotest [main] Data is filled in
+2024-02-07 20:21:57,031 INFO Autotest [main] Data is filled in
+2024-02-07 20:21:57,069 INFO Autotest [main] Data is filled in
+2024-02-07 20:21:57,110 INFO Autotest [main] Data is filled in
+2024-02-07 20:21:57,211 INFO Autotest [main] Data is filled in
+2024-02-07 20:21:57,299 INFO Autotest [main] Close browser
+2024-02-07 20:23:19,469 INFO Autotest [main] Open browser
+2024-02-07 20:23:22,214 INFO Autotest [main] Login button pressed
+2024-02-07 20:23:42,857 INFO Autotest [main] Button Ok
+2024-02-07 20:23:42,857 INFO Autotest [main] Authorization completed
+2024-02-07 20:23:44,570 INFO Autotest [main] Owl button hovered
+2024-02-07 20:24:29,348 INFO Autotest [main] LK is open
+2024-02-07 20:25:08,490 INFO Autotest [main] Tab About_Me selected 
+2024-02-07 20:25:08,547 INFO Autotest [main] Cleared
+2024-02-07 20:25:08,569 INFO Autotest [main] Cleared
+2024-02-07 20:25:08,591 INFO Autotest [main] Cleared
+2024-02-07 20:25:08,696 INFO Autotest [main] Data is filled in
+2024-02-07 20:25:08,733 INFO Autotest [main] Data is filled in
+2024-02-07 20:25:08,772 INFO Autotest [main] Data is filled in
+2024-02-07 20:25:08,808 INFO Autotest [main] Data is filled in
+2024-02-07 20:25:08,841 INFO Autotest [main] Data is filled in
+2024-02-07 20:25:08,897 INFO Autotest [main] Data is filled in
+2024-02-07 20:25:08,901 INFO Autotest [main] Close browser
+2024-02-07 20:25:54,633 INFO Autotest [main] Open browser
+2024-02-07 20:25:57,173 INFO Autotest [main] Login button pressed
+2024-02-07 20:26:17,792 INFO Autotest [main] Button Ok
+2024-02-07 20:26:17,792 INFO Autotest [main] Authorization completed
+2024-02-07 20:26:19,541 INFO Autotest [main] Owl button hovered
+2024-02-07 20:27:02,608 INFO Autotest [main] LK is open
+2024-02-07 20:27:41,745 INFO Autotest [main] Tab About_Me selected 
+2024-02-07 20:27:41,802 INFO Autotest [main] Cleared
+2024-02-07 20:27:41,825 INFO Autotest [main] Cleared
+2024-02-07 20:27:41,846 INFO Autotest [main] Cleared
+2024-02-07 20:27:41,951 INFO Autotest [main] Data is filled in
+2024-02-07 20:27:41,989 INFO Autotest [main] Data is filled in
+2024-02-07 20:27:42,026 INFO Autotest [main] Data is filled in
+2024-02-07 20:27:42,060 INFO Autotest [main] Data is filled in
+2024-02-07 20:27:42,094 INFO Autotest [main] Data is filled in
+2024-02-07 20:27:42,155 INFO Autotest [main] Data is filled in
+2024-02-07 20:27:42,279 INFO Autotest [main] Country selected
+2024-02-07 20:28:02,605 INFO Autotest [main] Close browser
+2024-02-07 20:35:25,725 INFO Autotest [main] Open browser
+2024-02-07 20:35:28,393 INFO Autotest [main] Login button pressed
+2024-02-07 20:35:49,115 INFO Autotest [main] Button Ok
+2024-02-07 20:35:49,115 INFO Autotest [main] Authorization completed
+2024-02-07 20:35:50,835 INFO Autotest [main] Owl button hovered
+2024-02-07 20:36:33,068 INFO Autotest [main] LK is open
+2024-02-07 20:37:12,184 INFO Autotest [main] Tab About_Me selected 
+2024-02-07 20:37:12,312 INFO Autotest [main] Cleared
+2024-02-07 20:37:12,336 INFO Autotest [main] Cleared
+2024-02-07 20:37:12,359 INFO Autotest [main] Cleared
+2024-02-07 20:37:12,470 INFO Autotest [main] Data is filled in
+2024-02-07 20:37:12,510 INFO Autotest [main] Data is filled in
+2024-02-07 20:37:12,546 INFO Autotest [main] Data is filled in
+2024-02-07 20:37:12,583 INFO Autotest [main] Data is filled in
+2024-02-07 20:37:12,627 INFO Autotest [main] Data is filled in
+2024-02-07 20:37:12,716 INFO Autotest [main] Data is filled in
+2024-02-07 20:37:12,854 INFO Autotest [main] Country selected
+2024-02-07 20:37:53,207 INFO Autotest [main] Close browser

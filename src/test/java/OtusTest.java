@@ -1,6 +1,8 @@
 import com.github.javafaker.Faker;
 import components.SingInPopup;
+import data.personal.EnglishLevelData;
 import data.personal.PersonalData;
+import data.personal.WorkGraphData;
 import data.sities.ICityData;
 import data.sities.RussianCitiesData;
 import factory.DriverFactory;
@@ -67,12 +69,10 @@ public class OtusTest {
 
         ICityData cityData= RussianCitiesData.SAINTPETERBURG;
         biographyPage.selectCity(cityData);
-//
-//        biographyPage.selectEnglishLevel(EnglishLevelData.BEGINNER);
-//
-//        biographyPage.selectToRelocate(Boolean.parseBoolean(String.valueOf(true)));
-//
-//        biographyPage.selectWorkGraph(true, WorkGraphData.FLEXIBLE);
+
+        biographyPage.selectToRelocate(Boolean.parseBoolean(String.valueOf(true)));
+
+        biographyPage.selectWorkGraph(true, WorkGraphData.FLEXIBLE);
 
 
     }
