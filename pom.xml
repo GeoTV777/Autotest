@@ -17,6 +17,8 @@
         <junit.version>5.10.2</junit.version>
         <log4j.core.version>2.22.1</log4j.core.version>
         <log4j.api.version>2.22.1</log4j.api.version>
+        <assertj.version>3.25.1</assertj.version>
+        <javafaker.vertion>1.0.2</javafaker.vertion>
 
         <surefire.plugin.version>3.2.5</surefire.plugin.version>
         <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
@@ -61,12 +63,12 @@
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
+            <version>${javafaker.vertion}</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.25.1</version>
+            <version>${assertj.version}</version>
         </dependency>
     </dependencies>
 

@@ -8,45 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 
 public class LkBiographyPage extends AbsBasePage {
-
-
-    //  поле имя id_fname
-    //  поле фамилия id_lname
-    // поле имя лат id_fname_latin
-    // поле фамилия лат id_lname_latin
-     //  поле имя в блоге id_blog_name
-    // поле дата  селектор [title='День рождения']
-    //   [title='О себе']
-
-    //  поле страна [class='lk-cv-block__select-options js-custom-select-options-container']
-    // поле город
-    // поле уровень английского
-
-
-
-
-    //        WebElement inputName = driver.findElement(By.cssSelector(String.format("[data-title='%s']", personalData.getName())));
-//        inputName.click();
-//        inputName.sendKeys(PersonalData.NAME.getName());
-//        WebElement inputSurname = driver.findElement(By.cssSelector(String.format("[data-title='%s']", personalData.getName())));
-//        inputSurname.click();
-//        inputSurname.sendKeys(PersonalData.SURNAME.getName());
-//
-//       WebElement inputNameLat = driver.findElement(By.id("id_fname_latin"));
-//       inputNameLat.click();
-//       inputNameLat.sendKeys(PersonalData.NAMELAT.getName());
-//
-//       WebElement inputSurnameLat = driver.findElement(By.id("id_lname_latin"));
-//       inputSurnameLat.click();
-//       inputSurnameLat.sendKeys(PersonalData.SURNAMELAT.getName());
-//
-//       WebElement inputDate = driver.findElement(By.cssSelector("[title='%s']"));
-//       inputDate.click();
-//       inputDate.sendKeys(PersonalData.DATE.getName());
-//    }
 
     public LkBiographyPage(WebDriver driver) {
         super(driver);
@@ -87,7 +50,7 @@ public class LkBiographyPage extends AbsBasePage {
         WebElement citListContainer = citySelectElement.findElement
 
                 //не видит этот локатор
-                (By.xpath("//button[contains(@title,'Россия')]//..//.."));
+                (By.xpath("//button[@data-empty='Город']//..//.."));
         waitTools.waitForCondition(ExpectedConditions.not
                 (ExpectedConditions.attributeContains(citListContainer, "class", "hide")));
 
@@ -115,30 +78,38 @@ public class LkBiographyPage extends AbsBasePage {
 
     public void selectToRelocate(boolean isSelected) {
         String relocate = isSelected ? "Да" : "Нет";
-        driver.findElement(By.xpath(String.format("//span[@class='radio__label' and text()='%ы']",relocate))).click();
-
+        driver.findElement(By.xpath(String.format("//span[@class='radio__label' and text()='%s']",relocate))).click();
     }
 
     public void selectWorkGraph(boolean isSelected, WorkGraphData... workGraphDatas) {
 
-    for(WorkGraphData workGraphData : workGraphDatas) {
+        for(WorkGraphData workGraphData : workGraphDatas) {
 
         WebElement checkBox = driver.findElement(By.cssSelector(String.format("input[title='%s']", workGraphData.getName())));
 
         if(checkBox.isSelected() != isSelected) {
             checkBox.click();
         }
-    }
+        }
 
     }
 
-    public void selectGender() {
-        String fieldGenderId = "id_gender";
+//    public void selectGender() {
+//        String fieldGenderId = "id_gender";
+//
+//        driver.findElement(By.id(fieldGenderId)).click();
+//        Select genderSelect = new Select(driver.findElement(By.id(fieldGenderId)));
+//        genderSelect.selectByVisibleText("Женский");
+////
+//    }  option[value='m']
+    public void selectGender(GenderData genderData) {
 
-        driver.findElement(By.id(fieldGenderId)).click();
-        Select genderSelect = new Select(driver.findElement(By.id(fieldGenderId)));
-        genderSelect.selectByVisibleText("Женский");
+        WebElement selectGengerElement = driver.findElement(By.id("id_gender"));
+        selectGengerElement.click();
 
+        WebElement genderElement = driver.findElement(By.cssSelector(String.format("option[value='%s']")));
+        waitTools.waitElementToBeClickable(By.cssSelector(String.valueOf(genderData.getName())));
+        genderElement.click();
     }
 
     public void inputPlaceOfWorkAndPosition(CompanyData companyData) {

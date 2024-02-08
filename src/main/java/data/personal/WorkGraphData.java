@@ -14,9 +14,4 @@ public enum WorkGraphData {
         return name;
     }
 
-
-
-
-
-
 }
