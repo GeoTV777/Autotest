@@ -8,7 +8,7 @@ public enum WorkGraphData {
 
     public String name;
     WorkGraphData(String name){
-        this.name= name();
+        this.name= name;
     }
     public String getName() {
         return name;

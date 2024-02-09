@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 
 public class LkBiographyPage extends AbsBasePage {
 
@@ -30,7 +31,7 @@ public class LkBiographyPage extends AbsBasePage {
         }
 
 
-    public void selectCity(ICityData cityData) {
+    public void selectCountryAbdCity(ICityData cityData) {
         WebElement russiaSelectElement = driver.findElement
                 (By.cssSelector("[data-slave-selector='.js-lk-cv-dependent-slave-city']"));
         russiaSelectElement.click();
@@ -39,30 +40,26 @@ public class LkBiographyPage extends AbsBasePage {
                 (By.xpath("//button[contains(@title,'Россия')]//..//.."));
         waitTools.waitForCondition(ExpectedConditions.not
                 (ExpectedConditions.attributeContains(countriesListContainer, "class", "hide")));
+
         driver.findElement(By.cssSelector(String.format("[title='%s']", cityData.getCountriesData().getName()))).click();
         waitTools.waitForCondition(ExpectedConditions.attributeContains(countriesListContainer, "class", "hide"));
         logger.info("Country selected");
+        waitTools.waitForCondition(ExpectedConditions.attributeContains(
+                By.cssSelector("[data-title='Город']"), "disabled", "disabled"));
 
 
-        WebElement citySelectElement = driver.findElement
-                (By.xpath("//input[contains(@name,'city')]/following-sibling::div"));
+        WebElement citySelectElement = driver.findElement(By.cssSelector("[name='city']+*"));
         citySelectElement.click();
-        WebElement citListContainer = citySelectElement.findElement
 
-                //не видит этот локатор
-                (By.xpath("//button[@data-empty='Город']//..//.."));
-        waitTools.waitForCondition(ExpectedConditions.not
-                (ExpectedConditions.attributeContains(citListContainer, "class", "hide")));
+        WebElement citiListContainer = driver.findElement(By.xpath("//button[@data-empty='Город']//..//.."));
+        waitTools.waitForCondition(ExpectedConditions.not(ExpectedConditions.attributeContains(citiListContainer, "class", "hide")));
 
-         waitTools.waitForCondition(ExpectedConditions.not
-        (ExpectedConditions.attributeToBe(citListContainer, "disabled", "disabled")));
-
-        driver.findElement(By.cssSelector(String.format("[title='%s']", cityData.getCountriesData().getName()))).click();
-
-        waitTools.waitForCondition(ExpectedConditions.attributeContains(citListContainer, "class", "hide"));
+        driver.findElement(By.cssSelector(String.format("[title='%s']",cityData.getName()))).click();
+        waitTools.waitForCondition(ExpectedConditions.attributeContains(citiListContainer, "class", "hide"));
         logger.info("City selected");
 
     }
+
 
     public void selectEnglishLevel(EnglishLevelData englishLevelData) {
         WebElement selectEnglishLevel = driver. findElement
@@ -72,47 +69,41 @@ public class LkBiographyPage extends AbsBasePage {
         WebElement levelListContainer = selectEnglishLevel.findElement
                 (By.xpath("//div[contains(@class,'lk-cv-block__select-options js-custom-select-options-container')]"));
         waitTools.waitForCondition(ExpectedConditions.not(ExpectedConditions.attributeContains(levelListContainer,"class", "hide")));
-        driver.findElement(By.cssSelector(String.format("data-title='%s']",englishLevelData.getName()))).click();
+        driver.findElement(By.cssSelector(String.format("[title='%s']",englishLevelData.getName()))).click();
+        logger.info("Level English selected");
     }
 
 
     public void selectToRelocate(boolean isSelected) {
         String relocate = isSelected ? "Да" : "Нет";
         driver.findElement(By.xpath(String.format("//span[@class='radio__label' and text()='%s']",relocate))).click();
+        logger.info("Check relocate");
     }
 
     public void selectWorkGraph(boolean isSelected, WorkGraphData... workGraphDatas) {
 
         for(WorkGraphData workGraphData : workGraphDatas) {
 
-        WebElement checkBox = driver.findElement(By.cssSelector(String.format("input[title='%s']", workGraphData.getName())));
+        WebElement checkBox = driver.findElement(By.cssSelector(String.format("input[title='%s']+*", workGraphData.getName())));
 
         if(checkBox.isSelected() != isSelected) {
             checkBox.click();
         }
         }
+        logger.info("Check work mode");
+    }
+    public void selectGender() {
+        String fieldGenderId = "id_gender";
 
+        driver.findElement(By.id(fieldGenderId)).click();
+        Select genderSelect = new Select(driver.findElement(By.id(fieldGenderId)));
+        genderSelect.selectByVisibleText("Женский");
+        waitTools.waitNotElementPresent(By.cssSelector(fieldGenderId));
+
+        logger.info("Gender selected");
     }
 
-//    public void selectGender() {
-//        String fieldGenderId = "id_gender";
-//
-//        driver.findElement(By.id(fieldGenderId)).click();
-//        Select genderSelect = new Select(driver.findElement(By.id(fieldGenderId)));
-//        genderSelect.selectByVisibleText("Женский");
-////
-//    }  option[value='m']
-    public void selectGender(GenderData genderData) {
-
-        WebElement selectGengerElement = driver.findElement(By.id("id_gender"));
-        selectGengerElement.click();
-
-        WebElement genderElement = driver.findElement(By.cssSelector(String.format("option[value='%s']")));
-        waitTools.waitElementToBeClickable(By.cssSelector(String.valueOf(genderData.getName())));
-        genderElement.click();
-    }
-
-    public void inputPlaceOfWorkAndPosition(CompanyData companyData) {
+    public void inputPlaceOfWorkAndPosition(AnyData companyData) {
 
 
         String fieldCompany = "";

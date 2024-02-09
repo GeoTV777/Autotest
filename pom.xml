@@ -12,7 +12,7 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <selenium.java.version>4.16.1</selenium.java.version>
+        <selenium.java.version>4.17.0</selenium.java.version>
         <webdriver.manager.version>5.6.3</webdriver.manager.version>
         <junit.version>5.10.2</junit.version>
         <log4j.core.version>2.22.1</log4j.core.version>
@@ -35,13 +35,6 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>${webdriver.manager.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>

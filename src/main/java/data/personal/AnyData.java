@@ -1,11 +1,11 @@
 package data.personal;
 
-public enum CompanyData {
+public enum AnyData {
     COMPANY("ООО ГАЗ"),
     POSITION("менеджер");
 
     private String name;
-    CompanyData(String name) {
+    AnyData(String name) {
         this.name= name;
     }
     public String getName() {

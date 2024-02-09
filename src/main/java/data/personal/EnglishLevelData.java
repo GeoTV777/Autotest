@@ -2,10 +2,10 @@ package data.personal;
 
 public enum EnglishLevelData {
 
-    BEGINNER("Начальный уровень"),
-    ELEMENTARY("Элементарный уровень"),
-    PREINTERMEDIATE("Ниже среднего"),
-    INTERMEDIATE("Средний");
+    BEGINNER("Начальный уровень (Beginner)"),
+    ELEMENTARY("Элементарный уровень (Elementary)"),
+    PREINTERMEDIATE("Ниже среднего (Pre-Intermediate)"),
+    INTERMEDIATE("Средний (Intermediate)");
     private String name;
 
     EnglishLevelData(String name) {
