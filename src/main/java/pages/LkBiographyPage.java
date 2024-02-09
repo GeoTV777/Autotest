@@ -2,8 +2,6 @@ package pages;
 
 import data.personal.*;
 import data.sities.ICityData;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,8 +13,6 @@ public class LkBiographyPage extends AbsBasePage {
     public LkBiographyPage(WebDriver driver) {
         super(driver);
     }
-
-    private Logger logger = (Logger) LogManager.getLogger("Autotest");
 
     public void clearPersData(PersonalData... personalData) {
         for(PersonalData persData : personalData ){
@@ -92,6 +88,13 @@ public class LkBiographyPage extends AbsBasePage {
         }
         logger.info("Check work mode");
     }
+//    Кнопка для вызова попапа подтверждения номера телефона
+//    public void indicatePhoneNumber(TelephoneNumberPopup telephoneNumberPopup) {
+//        WebElement buttonIndicatePhone = driver.findElement(By.cssSelector(".js-send.button.button_blue.button_md"));
+//
+//    }
+
+
     public void selectGender() {
         String fieldGenderId = "id_gender";
 
@@ -107,12 +110,6 @@ public class LkBiographyPage extends AbsBasePage {
         driver.findElement(By.id(String.format("%s",workData.getName()))).sendKeys(data);
         logger.info("Other data is filled in");
 
-
-
-//        public void inputFio(PersonalData personalData, String data) {
-//            driver.findElement(By.cssSelector(String.format("input[name='%s']", personalData.getName()))).sendKeys(data);
-//            logger.info("Data is filled in");
-//        }
 
     }
 

@@ -1,5 +1,5 @@
 import com.github.javafaker.Faker;
-import components.SingInPopup;
+import components.sign_in.SingInPopup;
 import data.personal.EnglishLevelData;
 import data.personal.PersonalData;
 import data.personal.WorkData;

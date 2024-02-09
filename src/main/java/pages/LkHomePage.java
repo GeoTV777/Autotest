@@ -7,7 +7,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LkHomePage extends AbsBasePage {
-    private Logger logger = (Logger) LogManager.getLogger("Autotest");
     public LkHomePage(WebDriver driver) {
         super(driver);
     }

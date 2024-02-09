@@ -1,6 +1,7 @@
-package components;
+package components.sign_in;
 
 import common.AbsCommon;
+import components.IPopup;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.junit.jupiter.api.Assertions;
@@ -10,7 +11,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SingInPopup extends AbsCommon implements IPopup {
-    private Logger logger = (Logger) LogManager.getLogger("Autotest");
     private String login= System.getProperty("login");
     private String password= System.getProperty("password");
 
