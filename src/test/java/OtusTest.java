@@ -1,5 +1,11 @@
 import com.github.javafaker.Faker;
 import components.SingInPopup;
+import data.personal.EnglishLevelData;
+import data.personal.PersonalData;
+import data.personal.WorkData;
+import data.personal.WorkGraphData;
+import data.sities.ICityData;
+import data.sities.RussianCitiesData;
 import factory.DriverFactory;
 import factory.settings.ChromeDriverSettings;
 import org.apache.logging.log4j.LogManager;
@@ -12,10 +18,12 @@ import pages.AbsBasePage;
 import pages.LkBiographyPage;
 import pages.LkHomePage;
 
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
 public class OtusTest {
 
     private WebDriver driver;
-//    private WaitTools waitTools;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
 
 
@@ -49,29 +57,29 @@ public class OtusTest {
         singInPopup.selectLkInMenu();
         homePage.setSelectTabAboutMe();
 
-//        biographyPage.clearPersData(PersonalData.NAME, PersonalData.SURNAME, PersonalData.NAMECHAT);
-//
-//        biographyPage.inputFio(PersonalData.NAME, faker.name().firstName());
-//        biographyPage.inputFio(PersonalData.SURNAME, faker.name().lastName());
-//        biographyPage.inputFio(PersonalData.NAMELAT, faker.name().firstName());
-//        biographyPage.inputFio(PersonalData.SURNAMELAT, faker.name().lastName());
-//        biographyPage.inputFio(PersonalData.NAMECHAT, faker.artist().name());
-//        biographyPage.inputFio(PersonalData.DATE, faker.date().birthday().toInstant().atZone
-//                (ZoneId.systemDefault()).toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
-//
-//        ICityData[] cityData= RussianCitiesData.values();
-//        ICityData city = faker.options().nextElement(cityData);
-//        biographyPage.selectCountryAbdCity(city);
-//
-//
-//
-//
-//        biographyPage.selectEnglishLevel(EnglishLevelData.INTERMEDIATE);
-//
-//        biographyPage.selectToRelocate(Boolean.parseBoolean(String.valueOf(true)));
+        biographyPage.clearPersData(PersonalData.NAME, PersonalData.SURNAME, PersonalData.NAMECHAT);
 
-//        biographyPage.selectWorkGraph(true, WorkGraphData.FLEXIBLE);
+        biographyPage.inputFio(PersonalData.NAME, faker.name().firstName());
+        biographyPage.inputFio(PersonalData.SURNAME, faker.name().lastName());
+        biographyPage.inputFio(PersonalData.NAMELAT, faker.name().firstName());
+        biographyPage.inputFio(PersonalData.SURNAMELAT, faker.name().lastName());
+        biographyPage.inputFio(PersonalData.NAMECHAT, faker.artist().name());
+        biographyPage.inputFio(PersonalData.DATE, faker.date().birthday().toInstant().atZone
+                (ZoneId.systemDefault()).toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+
+        ICityData[] cityData= RussianCitiesData.values();
+        ICityData city = faker.options().nextElement(cityData);
+        biographyPage.selectCountryAbdCity(city);
+
+        biographyPage.selectEnglishLevel(EnglishLevelData.INTERMEDIATE);
+
+        biographyPage.selectToRelocate(Boolean.parseBoolean(String.valueOf(true)));
+
+        biographyPage.selectWorkGraph(true, WorkGraphData.FLEXIBLE);
         biographyPage.selectGender();
+
+        biographyPage.inputPlaceOfWorkAndPosition(WorkData.COMPANY,faker.commerce().department());
+        biographyPage.inputPlaceOfWorkAndPosition(WorkData.POSITION,faker.job().position());
 
 
     }

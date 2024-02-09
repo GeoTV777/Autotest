@@ -103,15 +103,16 @@ public class LkBiographyPage extends AbsBasePage {
         logger.info("Gender selected");
     }
 
-    public void inputPlaceOfWorkAndPosition(AnyData companyData) {
+    public void inputPlaceOfWorkAndPosition(WorkData workData, String data) {
+        driver.findElement(By.id(String.format("%s",workData.getName()))).sendKeys(data);
+        logger.info("Other data is filled in");
 
 
-        String fieldCompany = "";
-        String inputCompany = "";
 
-        String fieldPosition = "";
-        String inputPosition = "";
-
+//        public void inputFio(PersonalData personalData, String data) {
+//            driver.findElement(By.cssSelector(String.format("input[name='%s']", personalData.getName()))).sendKeys(data);
+//            logger.info("Data is filled in");
+//        }
 
     }
 

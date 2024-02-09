@@ -8,7 +8,7 @@ public enum ContactsData {
 
     public String name;
     ContactsData(String name){
-        this.name= name();
+        this.name= name;
     }
     public String getName() {
         return name;
