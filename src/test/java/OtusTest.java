@@ -36,8 +36,8 @@ public class OtusTest {
     public void driverStop() {
         if (driver != null) {
             logger.info("Close browser");
-//            driver.close();
-//            driver.quit();
+            driver.close();
+            driver.quit();
         }
     }
 
