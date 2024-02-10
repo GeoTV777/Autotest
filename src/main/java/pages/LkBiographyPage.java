@@ -88,12 +88,6 @@ public class LkBiographyPage extends AbsBasePage {
         }
         logger.info("Check work mode");
     }
-//    Кнопка для вызова попапа подтверждения номера телефона
-//    public void indicatePhoneNumber(TelephoneNumberPopup telephoneNumberPopup) {
-//        WebElement buttonIndicatePhone = driver.findElement(By.cssSelector(".js-send.button.button_blue.button_md"));
-//
-//    }
-
 
     public void selectGender() {
         String fieldGenderId = "id_gender";
@@ -113,14 +107,14 @@ public class LkBiographyPage extends AbsBasePage {
 
     }
 
-//    public void save() {
-//        String btnSaveAndContinueSelector = "[name='continue']";
-//
-//        driver.findElement(By.cssSelector(btnSaveAndContinueSelector));
-//        waitTools.waitNotElementPresent(By.cssSelector(btnSaveAndContinueSelector));
-//        logger.info("Data saved");
-//
-//    }
+    public void save() {
+        String btnSaveAndContinueSelector = "[name='continue']";
+
+        driver.findElement(By.cssSelector(btnSaveAndContinueSelector));
+        waitTools.waitNotElementPresent(By.cssSelector(btnSaveAndContinueSelector));
+        logger.info("Data saved");
+
+    }
 
 
 

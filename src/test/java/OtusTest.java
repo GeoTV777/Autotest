@@ -49,11 +49,14 @@ public class OtusTest {
         LkBiographyPage biographyPage = new LkBiographyPage(driver);
         Faker faker = new Faker();
         ContactInfo contactInfo = new ContactInfo(driver);
+        ICityData[] cityData= RussianCitiesData.values();
+        ICityData city = faker.options().nextElement(cityData);
 
         basePage.open();
         singInPopup.authorization();
         singInPopup.enterHeaderIconOwl();
         singInPopup.selectLkInMenu();
+
         homePage.setSelectTabAboutMe();
 
         biographyPage.clearPersData(PersonalData.NAME, PersonalData.SURNAME, PersonalData.NAMECHAT);
@@ -66,8 +69,7 @@ public class OtusTest {
         biographyPage.inputFio(PersonalData.DATE, faker.date().birthday().toInstant().atZone
                 (ZoneId.systemDefault()).toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 
-        ICityData[] cityData= RussianCitiesData.values();
-        ICityData city = faker.options().nextElement(cityData);
+
         biographyPage.selectCountryAbdCity(city);
 
         biographyPage.selectEnglishLevel(EnglishLevelData.INTERMEDIATE);
@@ -85,6 +87,8 @@ public class OtusTest {
         contactInfo.addContactInfoForm(NumberFormInputData.FORM2,CommunicationMethodData.SKYPE, faker.phoneNumber().cellPhone());
         contactInfo.addingAnInputField();
         contactInfo.addContactInfoForm(NumberFormInputData.FORM3,CommunicationMethodData.HABR,faker.idNumber().valid());
+
+        biographyPage.save();
     }
 
 }
