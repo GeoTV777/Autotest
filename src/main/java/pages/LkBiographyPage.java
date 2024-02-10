@@ -108,10 +108,9 @@ public class LkBiographyPage extends AbsBasePage {
     }
 
     public void save() {
-        String btnSaveAndContinueSelector = "[name='continue']";
 
-        driver.findElement(By.cssSelector(btnSaveAndContinueSelector));
-        waitTools.waitNotElementPresent(By.cssSelector(btnSaveAndContinueSelector));
+        WebElement buttonSaveAndContinueSelector = driver.findElement(By.cssSelector("[name='continue']"));
+        buttonSaveAndContinueSelector.click();
         logger.info("Data saved");
 
     }

@@ -837,3 +837,64 @@
 2024-02-11 02:07:57,769 INFO Autotest [main] Phone number provided 
 2024-02-11 02:08:18,085 INFO Autotest [main] Data saved
 2024-02-11 02:08:18,089 INFO Autotest [main] Close browser
+2024-02-11 02:25:21,423 INFO Autotest [main] Open browser
+2024-02-11 02:25:23,222 INFO Autotest [main] Login button pressed
+2024-02-11 02:25:43,956 INFO Autotest [main] Button Ok
+2024-02-11 02:25:43,956 INFO Autotest [main] Authorization completed
+2024-02-11 02:25:47,778 INFO Autotest [main] Owl button hovered
+2024-02-11 02:26:30,485 INFO Autotest [main] LK is open
+2024-02-11 02:27:10,023 INFO Autotest [main] Tab About_Me selected 
+2024-02-11 02:27:10,164 INFO Autotest [main] Cleared
+2024-02-11 02:27:10,188 INFO Autotest [main] Cleared
+2024-02-11 02:27:10,212 INFO Autotest [main] Cleared
+2024-02-11 02:27:10,323 INFO Autotest [main] Data is filled in
+2024-02-11 02:27:10,362 INFO Autotest [main] Data is filled in
+2024-02-11 02:27:10,398 INFO Autotest [main] Data is filled in
+2024-02-11 02:27:10,440 INFO Autotest [main] Data is filled in
+2024-02-11 02:27:10,485 INFO Autotest [main] Data is filled in
+2024-02-11 02:27:10,579 INFO Autotest [main] Data is filled in
+2024-02-11 02:27:10,686 INFO Autotest [main] Country selected
+2024-02-11 02:27:31,050 INFO Autotest [main] City selected
+2024-02-11 02:27:51,274 INFO Autotest [main] Level English selected
+2024-02-11 02:27:51,331 INFO Autotest [main] Check relocate
+2024-02-11 02:27:51,399 INFO Autotest [main] Check work mode
+2024-02-11 02:28:11,856 INFO Autotest [main] Gender selected
+2024-02-11 02:28:11,945 INFO Autotest [main] Other data is filled in
+2024-02-11 02:28:11,990 INFO Autotest [main] Other data is filled in
+2024-02-11 02:28:12,138 INFO Autotest [main] Phone number provided 
+2024-02-11 02:28:12,178 INFO Autotest [main] Form added
+2024-02-11 02:28:12,326 INFO Autotest [main] Phone number provided 
+2024-02-11 02:28:12,359 INFO Autotest [main] Form added
+2024-02-11 02:28:12,510 INFO Autotest [main] Phone number provided 
+2024-02-11 02:28:53,924 INFO Autotest [main] Close browser
+2024-02-11 02:43:54,638 INFO Autotest [main] Open browser
+2024-02-11 02:43:56,787 INFO Autotest [main] Login button pressed
+2024-02-11 02:44:17,501 INFO Autotest [main] Button Ok
+2024-02-11 02:44:17,501 INFO Autotest [main] Authorization completed
+2024-02-11 02:44:22,928 INFO Autotest [main] Owl button hovered
+2024-02-11 02:45:07,744 INFO Autotest [main] LK is open
+2024-02-11 02:45:47,359 INFO Autotest [main] Tab About_Me selected 
+2024-02-11 02:45:47,409 INFO Autotest [main] Cleared
+2024-02-11 02:45:47,432 INFO Autotest [main] Cleared
+2024-02-11 02:45:47,453 INFO Autotest [main] Cleared
+2024-02-11 02:45:47,557 INFO Autotest [main] Data is filled in
+2024-02-11 02:45:47,590 INFO Autotest [main] Data is filled in
+2024-02-11 02:45:47,628 INFO Autotest [main] Data is filled in
+2024-02-11 02:45:47,663 INFO Autotest [main] Data is filled in
+2024-02-11 02:45:47,694 INFO Autotest [main] Data is filled in
+2024-02-11 02:45:47,748 INFO Autotest [main] Data is filled in
+2024-02-11 02:45:47,848 INFO Autotest [main] Country selected
+2024-02-11 02:46:08,012 INFO Autotest [main] City selected
+2024-02-11 02:46:28,268 INFO Autotest [main] Level English selected
+2024-02-11 02:46:28,307 INFO Autotest [main] Check relocate
+2024-02-11 02:46:28,389 INFO Autotest [main] Check work mode
+2024-02-11 02:46:48,893 INFO Autotest [main] Gender selected
+2024-02-11 02:46:48,968 INFO Autotest [main] Other data is filled in
+2024-02-11 02:46:49,006 INFO Autotest [main] Other data is filled in
+2024-02-11 02:46:49,158 INFO Autotest [main] Phone number provided 
+2024-02-11 02:46:49,200 INFO Autotest [main] Form added
+2024-02-11 02:46:49,338 INFO Autotest [main] Phone number provided 
+2024-02-11 02:46:49,367 INFO Autotest [main] Form added
+2024-02-11 02:46:49,507 INFO Autotest [main] Phone number provided 
+2024-02-11 02:47:30,066 INFO Autotest [main] Data saved
+2024-02-11 02:47:30,070 INFO Autotest [main] Close browser
