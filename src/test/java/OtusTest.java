@@ -83,6 +83,7 @@ public class OtusTest {
         contactInfo.addContactInfoForm(NumberFormInputData.FORM1,CommunicationMethodData.TELEGRAM, faker.phoneNumber().cellPhone());
         contactInfo.addingAnInputField();
         contactInfo.addContactInfoForm(NumberFormInputData.FORM2,CommunicationMethodData.SKYPE, faker.phoneNumber().cellPhone());
+        contactInfo.addingAnInputField();
         contactInfo.addContactInfoForm(NumberFormInputData.FORM3,CommunicationMethodData.HABR,faker.idNumber().valid());
     }
 

@@ -696,3 +696,65 @@
 2024-02-11 01:22:44,312 INFO Autotest [main] Login button pressed
 2024-02-11 01:23:05,013 INFO Autotest [main] Button Ok
 2024-02-11 01:23:05,013 INFO Autotest [main] Authorization completed
+2024-02-11 01:29:40,841 INFO Autotest [main] Open browser
+2024-02-11 01:29:43,239 INFO Autotest [main] Login button pressed
+2024-02-11 01:30:03,984 INFO Autotest [main] Button Ok
+2024-02-11 01:30:03,984 INFO Autotest [main] Authorization completed
+2024-02-11 01:32:18,604 INFO Autotest [main] Open browser
+2024-02-11 01:32:20,556 INFO Autotest [main] Login button pressed
+2024-02-11 01:32:41,342 INFO Autotest [main] Button Ok
+2024-02-11 01:32:41,342 INFO Autotest [main] Authorization completed
+2024-02-11 01:32:58,729 INFO Autotest [main] Owl button hovered
+2024-02-11 01:33:44,151 INFO Autotest [main] LK is open
+2024-02-11 01:34:23,548 INFO Autotest [main] Tab About_Me selected 
+2024-02-11 01:34:23,672 INFO Autotest [main] Cleared
+2024-02-11 01:34:23,694 INFO Autotest [main] Cleared
+2024-02-11 01:34:23,715 INFO Autotest [main] Cleared
+2024-02-11 01:34:23,821 INFO Autotest [main] Data is filled in
+2024-02-11 01:34:23,859 INFO Autotest [main] Data is filled in
+2024-02-11 01:34:23,897 INFO Autotest [main] Data is filled in
+2024-02-11 01:34:23,935 INFO Autotest [main] Data is filled in
+2024-02-11 01:34:23,990 INFO Autotest [main] Data is filled in
+2024-02-11 01:34:24,071 INFO Autotest [main] Data is filled in
+2024-02-11 01:34:24,182 INFO Autotest [main] Country selected
+2024-02-11 01:34:44,619 INFO Autotest [main] City selected
+2024-02-11 01:35:04,915 INFO Autotest [main] Level English selected
+2024-02-11 01:35:04,954 INFO Autotest [main] Check relocate
+2024-02-11 01:35:05,021 INFO Autotest [main] Check work mode
+2024-02-11 01:35:25,510 INFO Autotest [main] Gender selected
+2024-02-11 01:35:25,605 INFO Autotest [main] Other data is filled in
+2024-02-11 01:35:25,648 INFO Autotest [main] Other data is filled in
+2024-02-11 01:35:25,792 INFO Autotest [main] Phone number provided 
+2024-02-11 01:35:25,831 INFO Autotest [main] Form added
+2024-02-11 01:35:25,979 INFO Autotest [main] Phone number provided 
+2024-02-11 01:35:26,001 INFO Autotest [main] Close browser
+2024-02-11 01:45:07,314 INFO Autotest [main] Open browser
+2024-02-11 01:45:09,653 INFO Autotest [main] Login button pressed
+2024-02-11 01:45:30,277 INFO Autotest [main] Button Ok
+2024-02-11 01:45:30,278 INFO Autotest [main] Authorization completed
+2024-02-11 01:45:44,572 INFO Autotest [main] Owl button hovered
+2024-02-11 01:46:29,497 INFO Autotest [main] LK is open
+2024-02-11 01:47:08,980 INFO Autotest [main] Tab About_Me selected 
+2024-02-11 01:47:09,103 INFO Autotest [main] Cleared
+2024-02-11 01:47:09,125 INFO Autotest [main] Cleared
+2024-02-11 01:47:09,146 INFO Autotest [main] Cleared
+2024-02-11 01:47:09,262 INFO Autotest [main] Data is filled in
+2024-02-11 01:47:09,305 INFO Autotest [main] Data is filled in
+2024-02-11 01:47:09,339 INFO Autotest [main] Data is filled in
+2024-02-11 01:47:09,385 INFO Autotest [main] Data is filled in
+2024-02-11 01:47:09,436 INFO Autotest [main] Data is filled in
+2024-02-11 01:47:09,520 INFO Autotest [main] Data is filled in
+2024-02-11 01:47:09,626 INFO Autotest [main] Country selected
+2024-02-11 01:47:30,208 INFO Autotest [main] City selected
+2024-02-11 01:47:50,477 INFO Autotest [main] Level English selected
+2024-02-11 01:47:50,519 INFO Autotest [main] Check relocate
+2024-02-11 01:47:50,580 INFO Autotest [main] Check work mode
+2024-02-11 01:48:11,147 INFO Autotest [main] Gender selected
+2024-02-11 01:48:11,223 INFO Autotest [main] Other data is filled in
+2024-02-11 01:48:11,264 INFO Autotest [main] Other data is filled in
+2024-02-11 01:48:11,404 INFO Autotest [main] Phone number provided 
+2024-02-11 01:48:11,442 INFO Autotest [main] Form added
+2024-02-11 01:48:11,583 INFO Autotest [main] Phone number provided 
+2024-02-11 01:48:11,616 INFO Autotest [main] Form added
+2024-02-11 01:48:11,758 INFO Autotest [main] Phone number provided 
+2024-02-11 01:48:11,760 INFO Autotest [main] Close browser
