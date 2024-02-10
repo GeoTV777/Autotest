@@ -1,9 +1,7 @@
 import com.github.javafaker.Faker;
+import components.lk_biogpaphy.ContactInfo;
 import components.sign_in.SingInPopup;
-import data.personal.EnglishLevelData;
-import data.personal.PersonalData;
-import data.personal.WorkData;
-import data.personal.WorkGraphData;
+import data.personal.*;
 import data.sities.ICityData;
 import data.sities.RussianCitiesData;
 import factory.DriverFactory;
@@ -50,6 +48,7 @@ public class OtusTest {
         LkHomePage homePage = new LkHomePage(driver);
         LkBiographyPage biographyPage = new LkBiographyPage(driver);
         Faker faker = new Faker();
+        ContactInfo contactInfo = new ContactInfo(driver);
 
         basePage.open();
         singInPopup.authorization();
@@ -81,7 +80,10 @@ public class OtusTest {
         biographyPage.inputPlaceOfWorkAndPosition(WorkData.COMPANY,faker.commerce().department());
         biographyPage.inputPlaceOfWorkAndPosition(WorkData.POSITION,faker.job().position());
 
-
+        contactInfo.addContactInfoForm(NumberFormInputData.FORM1,CommunicationMethodData.TELEGRAM, faker.phoneNumber().cellPhone());
+        contactInfo.addingAnInputField();
+        contactInfo.addContactInfoForm(NumberFormInputData.FORM2,CommunicationMethodData.SKYPE, faker.phoneNumber().cellPhone());
+        contactInfo.addContactInfoForm(NumberFormInputData.FORM3,CommunicationMethodData.HABR,faker.idNumber().valid());
     }
 
 }
