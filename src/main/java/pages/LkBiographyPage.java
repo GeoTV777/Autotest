@@ -15,7 +15,7 @@ public class LkBiographyPage extends AbsBasePage {
     }
 
     public void clearPersData(PersonalData... personalData) {
-        for(PersonalData persData : personalData ){
+        for(PersonalData persData : personalData){
             driver.findElement(By.cssSelector(String.format("input[name='%s']", persData.getName()))).clear();
             logger.info("Cleared");
         }
@@ -112,6 +112,9 @@ public class LkBiographyPage extends AbsBasePage {
         WebElement buttonSaveAndContinueSelector = driver.findElement(By.cssSelector("[name='continue']"));
         buttonSaveAndContinueSelector.click();
         logger.info("Data saved");
+
+    }
+    public void controlSave() {
 
     }
 

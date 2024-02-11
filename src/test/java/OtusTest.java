@@ -20,7 +20,6 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public class OtusTest {
-
     private WebDriver driver;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
 
@@ -54,7 +53,10 @@ public class OtusTest {
 
         basePage.open();
         singInPopup.authorization();
+        singInPopup.isAuthorized();
+
         singInPopup.enterHeaderIconOwl();
+
         singInPopup.selectLkInMenu();
 
         homePage.setSelectTabAboutMe();
@@ -88,9 +90,7 @@ public class OtusTest {
         contactInfo.addingAnInputField();
         contactInfo.addContactInfoForm(NumberFormInputData.FORM3,CommunicationMethodData.HABR,faker.idNumber().valid());
 
-        biographyPage.save();
+//        biographyPage.save();
     }
 
 }
-
-

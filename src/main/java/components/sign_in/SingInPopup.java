@@ -2,22 +2,20 @@ package components.sign_in;
 
 import common.AbsCommon;
 import components.IPopup;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.NoSuchElementException;
+
 public class SingInPopup extends AbsCommon implements IPopup {
     private String login= System.getProperty("login");
     private String password= System.getProperty("password");
-
-
     private String signInPopupSelector = "#__PORTAL__ > div";
     private String headerIconOwlSelector = "img[src*='blue-owl']";
-   private String btnEntrySelector = "#__PORTAL__ button";
+    private String btnEntrySelector = "#__PORTAL__ button";
 
     public SingInPopup(WebDriver driver) {
         super(driver);
@@ -40,22 +38,34 @@ public class SingInPopup extends AbsCommon implements IPopup {
 
         waitTools.waitElementPresent(By.cssSelector(signInPopupSelector));
         waitTools.waitElementToBeClickable(By.xpath(inputNameClickLocator));
+
         driver.findElement(By.xpath(inputNameClickLocator)).click();
         driver.findElement(By.xpath(inputNameLocator)).sendKeys(login);
         waitTools.waitElementPresent(By.cssSelector(warningNameSelector));
 
-        waitTools.waitElementToBeClickable(By.xpath(inputPassClickLocator));
+//        waitTools.waitElementToBeClickable(By.xpath(inputPassClickLocator));
         driver.findElement(By.xpath(inputPassClickLocator)).click();
         driver.findElement(By.xpath(inputPassLocator)).sendKeys(password);
 
         waitTools.waitElementToBeClickable(By.cssSelector(btnEntrySelector));
         driver.findElement(By.cssSelector(btnEntrySelector)).click();
         logger.info("Button Ok");
-        logger.info("Authorization completed");
+
 
     }
+    public boolean isAuthorized() {
+        try {
+            waitTools.waitElementPresent(By.cssSelector(headerIconOwlSelector));
+            return true;
+
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
     public void enterHeaderIconOwl() {
         waitTools.waitElementToBeClickable(By.cssSelector(headerIconOwlSelector));
+        logger.info("Authorization completed");
         WebElement element = driver.findElement(By.cssSelector(headerIconOwlSelector));
         actions.moveToElement(element).perform();
         logger.info("Owl button hovered");
@@ -67,6 +77,8 @@ public class SingInPopup extends AbsCommon implements IPopup {
         driver.findElement(By.xpath(buttonLkLocator)).click();
         logger.info("LK is open");
     }
+
+
 
     @Override
     public void popupShouldNotBeVisible() {
