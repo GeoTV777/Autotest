@@ -19,7 +19,7 @@ import pages.LkHomePage;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-public class OtusTest {
+public class LkPersonalTest {
     private WebDriver driver;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
 

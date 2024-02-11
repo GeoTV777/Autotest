@@ -39,3 +39,38 @@
 2024-02-11 20:15:34,071 INFO Autotest [main] Form added
 2024-02-11 20:15:34,221 INFO Autotest [main] Phone number provided 
 2024-02-11 20:15:34,223 INFO Autotest [main] Close browser
+2024-02-11 20:29:39,308 INFO Autotest [main] Open browser
+2024-02-11 20:30:01,866 INFO Autotest [main] Open browser
+2024-02-11 20:30:03,871 INFO Autotest [main] Login button pressed
+2024-02-11 20:30:24,418 INFO Autotest [main] Button Ok
+2024-02-11 20:30:25,697 INFO Autotest [main] Close browser
+2024-02-11 20:30:26,637 INFO Autotest [main] Open browser
+2024-02-11 20:30:30,029 INFO Autotest [main] Login button pressed
+2024-02-11 20:30:50,536 INFO Autotest [main] Button Ok
+2024-02-11 20:30:54,231 INFO Autotest [main] Authorization completed
+2024-02-11 20:30:54,356 INFO Autotest [main] Owl button hovered
+2024-02-11 20:31:36,232 INFO Autotest [main] LK is open
+2024-02-11 20:32:15,848 INFO Autotest [main] Tab About_Me selected 
+2024-02-11 20:32:15,975 INFO Autotest [main] Cleared
+2024-02-11 20:32:15,996 INFO Autotest [main] Cleared
+2024-02-11 20:32:16,017 INFO Autotest [main] Cleared
+2024-02-11 20:32:16,123 INFO Autotest [main] Data is filled in
+2024-02-11 20:32:16,160 INFO Autotest [main] Data is filled in
+2024-02-11 20:32:16,202 INFO Autotest [main] Data is filled in
+2024-02-11 20:32:16,242 INFO Autotest [main] Data is filled in
+2024-02-11 20:32:16,283 INFO Autotest [main] Data is filled in
+2024-02-11 20:32:16,376 INFO Autotest [main] Data is filled in
+2024-02-11 20:32:16,486 INFO Autotest [main] Country selected
+2024-02-11 20:32:36,657 INFO Autotest [main] City selected
+2024-02-11 20:32:56,884 INFO Autotest [main] Level English selected
+2024-02-11 20:32:56,925 INFO Autotest [main] Check relocate
+2024-02-11 20:32:56,997 INFO Autotest [main] Check work mode
+2024-02-11 20:33:17,320 INFO Autotest [main] Gender selected
+2024-02-11 20:33:17,445 INFO Autotest [main] Other data is filled in
+2024-02-11 20:33:17,485 INFO Autotest [main] Other data is filled in
+2024-02-11 20:33:17,626 INFO Autotest [main] Phone number provided 
+2024-02-11 20:33:17,666 INFO Autotest [main] Form added
+2024-02-11 20:33:17,814 INFO Autotest [main] Phone number provided 
+2024-02-11 20:33:17,846 INFO Autotest [main] Form added
+2024-02-11 20:33:17,990 INFO Autotest [main] Phone number provided 
+2024-02-11 20:33:17,991 INFO Autotest [main] Close browser
