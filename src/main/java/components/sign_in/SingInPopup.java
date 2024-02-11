@@ -2,12 +2,15 @@ package components.sign_in;
 
 import common.AbsCommon;
 import components.IPopup;
+import org.bouncycastle.pqc.crypto.util.PQCOtherInfoGenerator;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class SingInPopup extends AbsCommon implements IPopup {
@@ -15,6 +18,7 @@ public class SingInPopup extends AbsCommon implements IPopup {
     private String password= System.getProperty("password");
     private String signInPopupSelector = "#__PORTAL__ > div";
     private String headerIconOwlSelector = "img[src*='blue-owl']";
+
     private String btnEntrySelector = "#__PORTAL__ button";
 
     public SingInPopup(WebDriver driver) {
@@ -28,7 +32,7 @@ public class SingInPopup extends AbsCommon implements IPopup {
         String warningNameSelector = "[fill-rule='nonzero']";
         String inputPassClickLocator = "//input[@type='password']/..";
         String inputPassLocator = "//input[@type='password']";
-
+        String btnEntrySelector ="#__PORTAL__ button";
 
         waitTools.waitElementPresent(By.xpath(headerSignInButton));
         driver.findElement(By.xpath(headerSignInButton)).click();
@@ -43,16 +47,16 @@ public class SingInPopup extends AbsCommon implements IPopup {
         driver.findElement(By.xpath(inputNameLocator)).sendKeys(login);
         waitTools.waitElementPresent(By.cssSelector(warningNameSelector));
 
-//        waitTools.waitElementToBeClickable(By.xpath(inputPassClickLocator));
+        waitTools.waitElementToBeClickable(By.xpath(inputPassClickLocator));
         driver.findElement(By.xpath(inputPassClickLocator)).click();
         driver.findElement(By.xpath(inputPassLocator)).sendKeys(password);
 
         waitTools.waitElementToBeClickable(By.cssSelector(btnEntrySelector));
         driver.findElement(By.cssSelector(btnEntrySelector)).click();
-        logger.info("Button Ok");
 
-
+          logger.info("Button Ok");
     }
+
     public boolean isAuthorized() {
         try {
             waitTools.waitElementPresent(By.cssSelector(headerIconOwlSelector));

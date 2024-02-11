@@ -19,6 +19,7 @@ import pages.LkHomePage;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
+
 public class LkPersonalTest {
     private WebDriver driver;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
@@ -90,7 +91,7 @@ public class LkPersonalTest {
         contactInfo.addingAnInputField();
         contactInfo.addContactInfoForm(NumberFormInputData.FORM3,CommunicationMethodData.HABR,faker.idNumber().valid());
 
-//        biographyPage.save();
+        biographyPage.save();
     }
 
 }
