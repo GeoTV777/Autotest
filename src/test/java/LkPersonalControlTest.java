@@ -1,5 +1,7 @@
 import components.lk_biogpaphy.ContactInfo;
 import components.sign_in.SingInPopup;
+import data.personal.InputFieldsData;
+import data.personal.PersonalData;
 import factory.DriverFactory;
 import factory.settings.ChromeDriverSettings;
 import org.apache.logging.log4j.LogManager;
@@ -11,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import pages.AbsBasePage;
+import pages.LkBiographyPage;
 import pages.LkHomePage;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LkPersonalControlTest {
@@ -29,21 +32,28 @@ public class LkPersonalControlTest {
     public void driverStop() {
         if (driver != null) {
             logger.info("Close browser");
-            driver.close();
-            driver.quit();
+//            driver.close();
+//            driver.quit();
         }
     }
     @Test
     public void saveControl() {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);
-        LkHomePage homePage = new LkHomePage(driver);
-        ContactInfo contactInfo = new ContactInfo(driver);
+//        LkHomePage homePage = new LkHomePage(driver);
+//        ContactInfo contactInfo = new ContactInfo(driver);
+        LkBiographyPage biographyPage = new LkBiographyPage(driver);
+
+
 
         basePage.open();
         singInPopup.authorization();
 
         basePage.open("/lk/biography/personal/");
+        biographyPage.controlSavePersonal(InputFieldsData.INPUT_NAME,InputFieldsData.INPUT_SURNAME);
+        //  продолжить перечисление полей
+
+
 
 
     }

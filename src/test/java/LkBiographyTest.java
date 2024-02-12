@@ -8,9 +8,11 @@ import factory.DriverFactory;
 import factory.settings.ChromeDriverSettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import pages.AbsBasePage;
 import pages.LkBiographyPage;
@@ -19,7 +21,7 @@ import pages.LkHomePage;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LkBiographyTest {
     private WebDriver driver;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
@@ -62,9 +64,12 @@ public class LkBiographyTest {
 
         homePage.setSelectTabAboutMe();
 
+
         biographyPage.clearPersData(PersonalData.NAME, PersonalData.SURNAME, PersonalData.NAMECHAT);
 
+
         biographyPage.inputFio(PersonalData.NAME, faker.name().firstName());
+
         biographyPage.inputFio(PersonalData.SURNAME, faker.name().lastName());
         biographyPage.inputFio(PersonalData.NAMELAT, faker.name().firstName());
         biographyPage.inputFio(PersonalData.SURNAMELAT, faker.name().lastName());

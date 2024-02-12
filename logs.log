@@ -166,3 +166,28 @@
 2024-02-12 09:21:14,702 INFO Autotest [main] Open browser
 2024-02-12 09:21:26,018 INFO Autotest [main] Login button pressed
 2024-02-12 09:21:46,712 INFO Autotest [main] Button Ok
+2024-02-12 14:34:09,531 INFO Autotest [main] Open browser
+2024-02-12 14:34:16,646 INFO Autotest [main] Login button pressed
+2024-02-12 14:34:37,530 INFO Autotest [main] Button Ok
+2024-02-12 14:39:24,270 INFO Autotest [main] Open browser
+2024-02-12 14:42:24,329 INFO Autotest [main] Close browser
+2024-02-12 14:44:26,049 INFO Autotest [main] Open browser
+2024-02-12 14:44:38,422 INFO Autotest [main] Login button pressed
+2024-02-12 14:44:59,237 INFO Autotest [main] Button Ok
+2024-02-12 14:45:02,147 INFO Autotest [main] Close browser
+2024-02-12 14:45:55,686 INFO Autotest [main] Open browser
+2024-02-12 14:46:11,153 INFO Autotest [main] Login button pressed
+2024-02-12 14:46:31,795 INFO Autotest [main] Button Ok
+2024-02-12 14:47:12,380 INFO Autotest [main] Authorization completed
+2024-02-12 14:47:12,390 INFO Autotest [main] Close browser
+2024-02-12 14:47:13,507 INFO Autotest [main] Open browser
+2024-02-12 14:47:34,409 INFO Autotest [main] Login button pressed
+2024-02-12 14:51:53,659 INFO Autotest [main] Open browser
+2024-02-12 14:52:01,268 INFO Autotest [main] Login button pressed
+2024-02-12 14:52:22,035 INFO Autotest [main] Button Ok
+2024-02-12 14:53:02,492 INFO Autotest [main] Authorization completed
+2024-02-12 14:53:02,498 INFO Autotest [main] Close browser
+2024-02-12 14:53:03,588 INFO Autotest [main] Open browser
+2024-02-12 14:53:11,129 INFO Autotest [main] Login button pressed
+2024-02-12 14:53:31,930 INFO Autotest [main] Button Ok
+2024-02-12 14:53:33,957 INFO Autotest [main] Close browser

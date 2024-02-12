@@ -2,16 +2,18 @@ package pages;
 
 import data.personal.*;
 import data.sities.ICityData;
-import org.junit.FixMethodOrder;
-import org.junit.runners.MethodSorters;
+import org.checkerframework.checker.units.qual.A;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+
 public class LkBiographyPage extends AbsBasePage {
+
+    private String personalDataInput = "input[name='%s']";
 
     public LkBiographyPage(WebDriver driver) {
         super(driver);
@@ -19,15 +21,16 @@ public class LkBiographyPage extends AbsBasePage {
 
     public void clearPersData(PersonalData... personalData) {
         for(PersonalData persData : personalData){
-            driver.findElement(By.cssSelector(String.format("input[name='%s']", persData.getName()))).clear();
+        driver.findElement(By.cssSelector(String.format(personalDataInput, persData.getName()))).clear();
             logger.info("Cleared");
         }
     }
 
     public void inputFio(PersonalData personalData, String data) {
-                driver.findElement(By.cssSelector(String.format("input[name='%s']", personalData.getName()))).sendKeys(data);
-                logger.info("Data is filled in");
-        }
+        driver.findElement(By.cssSelector(String.format(personalDataInput, personalData.getName()))).sendKeys(data);
+        logger.info("Data is filled in");
+
+    }
 
 
     public void selectCountryAbdCity(ICityData cityData) {
@@ -117,12 +120,12 @@ public class LkBiographyPage extends AbsBasePage {
         logger.info("Data saved");
 
     }
-    public void controlSave() {
-
-
+    public void controlSavePersonal(InputFieldsData...inputFieldsData) {
+        for (InputFieldsData fieldsData : inputFieldsData) {
+            By locator = fieldsData.locator;
+            Assertions.assertTrue(driver.findElement(locator).isDisplayed(), "Element is not displayed");
+            Assertions.assertFalse(!driver.findElement(locator).getText().isEmpty(), "Element is empty");
+        }
     }
-
-
-
 }
 
