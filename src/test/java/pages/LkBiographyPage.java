@@ -2,12 +2,15 @@ package pages;
 
 import data.personal.*;
 import data.sities.ICityData;
+import org.junit.FixMethodOrder;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LkBiographyPage extends AbsBasePage {
 
     public LkBiographyPage(WebDriver driver) {
@@ -115,6 +118,7 @@ public class LkBiographyPage extends AbsBasePage {
 
     }
     public void controlSave() {
+
 
     }
 

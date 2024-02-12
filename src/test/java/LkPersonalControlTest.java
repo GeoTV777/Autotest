@@ -4,14 +4,16 @@ import factory.DriverFactory;
 import factory.settings.ChromeDriverSettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
+import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import pages.AbsBasePage;
 import pages.LkHomePage;
-
-public class LKPersonalControlTest {
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+public class LkPersonalControlTest {
     private WebDriver driver;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
 

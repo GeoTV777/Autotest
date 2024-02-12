@@ -20,7 +20,7 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 
-public class LkPersonalTest {
+public class LkBiographyTest {
     private WebDriver driver;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
 

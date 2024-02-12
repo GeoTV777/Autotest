@@ -159,3 +159,10 @@
 2024-02-11 22:15:35,535 INFO Autotest [main] Phone number provided 
 2024-02-11 22:16:15,669 INFO Autotest [main] Data saved
 2024-02-11 22:16:15,670 INFO Autotest [main] Close browser
+2024-02-12 09:20:29,858 INFO Autotest [main] Open browser
+2024-02-12 09:20:40,635 INFO Autotest [main] Login button pressed
+2024-02-12 09:21:01,299 INFO Autotest [main] Button Ok
+2024-02-12 09:21:12,914 INFO Autotest [main] Close browser
+2024-02-12 09:21:14,702 INFO Autotest [main] Open browser
+2024-02-12 09:21:26,018 INFO Autotest [main] Login button pressed
+2024-02-12 09:21:46,712 INFO Autotest [main] Button Ok
