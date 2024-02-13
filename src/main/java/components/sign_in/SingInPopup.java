@@ -45,7 +45,6 @@ public class SingInPopup extends AbsCommon implements IPopup {
 
         driver.findElement(By.xpath(inputNameClickLocator)).click();
         driver.findElement(By.xpath(inputNameLocator)).sendKeys(login);
-        waitTools.waitElementPresent(By.cssSelector(warningNameSelector));
 
         waitTools.waitElementToBeClickable(By.xpath(inputPassClickLocator));
         driver.findElement(By.xpath(inputPassClickLocator)).click();
@@ -53,8 +52,7 @@ public class SingInPopup extends AbsCommon implements IPopup {
 
         waitTools.waitElementToBeClickable(By.cssSelector(btnEntrySelector));
         driver.findElement(By.cssSelector(btnEntrySelector)).click();
-
-          logger.info("Button Ok");
+        logger.info("Button Ok");
     }
 
     public boolean isAuthorized() {
@@ -81,7 +79,6 @@ public class SingInPopup extends AbsCommon implements IPopup {
         driver.findElement(By.xpath(buttonLkLocator)).click();
         logger.info("LK is open");
     }
-
 
 
     @Override

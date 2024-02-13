@@ -2,7 +2,6 @@ package pages;
 
 import data.personal.*;
 import data.sities.ICityData;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +12,12 @@ import org.openqa.selenium.support.ui.Select;
 
 public class LkBiographyPage extends AbsBasePage {
 
-    private String personalDataInput = "input[name='%s']";
+    private String personalDataInputSelector = "input[name='%s']";
+    private String countryInputSelector ="[data-slave-selector='.js-lk-cv-dependent-slave-city']";
+    private String  cityInputSelector ="[name='city']+*";
+    private String englishLevelInputLocator = "//input[@name ='english_level']/following::*";
+    private String fieldGenderId = "id_gender";
+
 
     public LkBiographyPage(WebDriver driver) {
         super(driver);
@@ -21,13 +25,13 @@ public class LkBiographyPage extends AbsBasePage {
 
     public void clearPersData(PersonalData... personalData) {
         for(PersonalData persData : personalData){
-        driver.findElement(By.cssSelector(String.format(personalDataInput, persData.getName()))).clear();
+        driver.findElement(By.cssSelector(String.format(personalDataInputSelector, persData.getName()))).clear();
             logger.info("Cleared");
         }
     }
 
     public void inputFio(PersonalData personalData, String data) {
-        driver.findElement(By.cssSelector(String.format(personalDataInput, personalData.getName()))).sendKeys(data);
+        driver.findElement(By.cssSelector(String.format(personalDataInputSelector, personalData.getName()))).sendKeys(data);
         logger.info("Data is filled in");
 
     }
@@ -35,7 +39,7 @@ public class LkBiographyPage extends AbsBasePage {
 
     public void selectCountryAbdCity(ICityData cityData) {
         WebElement russiaSelectElement = driver.findElement
-                (By.cssSelector("[data-slave-selector='.js-lk-cv-dependent-slave-city']"));
+                (By.cssSelector(countryInputSelector));
         russiaSelectElement.click();
 
         WebElement countriesListContainer = russiaSelectElement.findElement
@@ -50,7 +54,7 @@ public class LkBiographyPage extends AbsBasePage {
                 By.cssSelector("[data-title='Город']"), "disabled", "disabled"));
 
 
-        WebElement citySelectElement = driver.findElement(By.cssSelector("[name='city']+*"));
+        WebElement citySelectElement = driver.findElement(By.cssSelector(cityInputSelector));
         citySelectElement.click();
 
         WebElement citiListContainer = driver.findElement(By.xpath("//button[@data-empty='Город']//..//.."));
@@ -64,11 +68,10 @@ public class LkBiographyPage extends AbsBasePage {
 
 
     public void selectEnglishLevel(EnglishLevelData englishLevelData) {
-        WebElement selectEnglishLevel = driver. findElement
-                (By.xpath("//input[@name ='english_level']/following::*"));
+        WebElement selectEnglishLevel = driver. findElement(By.xpath(englishLevelInputLocator));
         selectEnglishLevel.click();
 
-        WebElement levelListContainer = selectEnglishLevel.findElement
+        WebElement levelListContainer = driver.findElement
                 (By.xpath("//div[contains(@class,'lk-cv-block__select-options js-custom-select-options-container')]"));
         waitTools.waitForCondition(ExpectedConditions.not(ExpectedConditions.attributeContains(levelListContainer,"class", "hide")));
         driver.findElement(By.cssSelector(String.format("[title='%s']",englishLevelData.getName()))).click();
@@ -96,8 +99,6 @@ public class LkBiographyPage extends AbsBasePage {
     }
 
     public void selectGender() {
-        String fieldGenderId = "id_gender";
-
         driver.findElement(By.id(fieldGenderId)).click();
         Select genderSelect = new Select(driver.findElement(By.id(fieldGenderId)));
         genderSelect.selectByVisibleText("Женский");
@@ -109,23 +110,36 @@ public class LkBiographyPage extends AbsBasePage {
     public void inputPlaceOfWorkAndPosition(WorkData workData, String data) {
         driver.findElement(By.id(String.format("%s",workData.getName()))).sendKeys(data);
         logger.info("Other data is filled in");
-
-
     }
 
     public void save() {
-
         WebElement buttonSaveAndContinueSelector = driver.findElement(By.cssSelector("[name='continue']"));
         buttonSaveAndContinueSelector.click();
         logger.info("Data saved");
 
     }
-    public void controlSavePersonal(InputFieldsData...inputFieldsData) {
-        for (InputFieldsData fieldsData : inputFieldsData) {
-            By locator = fieldsData.locator;
-            Assertions.assertTrue(driver.findElement(locator).isDisplayed(), "Element is not displayed");
-            Assertions.assertFalse(!driver.findElement(locator).getText().isEmpty(), "Element is empty");
+    public void controlSavePersonal(PersonalData... personalData) {
+        for (PersonalData personalData1 : personalData) {
+            Assertions.assertTrue(driver.findElement(By.cssSelector(String.format(personalDataInputSelector, personalData1.getName()))).isDisplayed(), "Element is not displayed");
+            Assertions.assertTrue(!driver.findElement(By.cssSelector(String.format(personalDataInputSelector, personalData1.getName()))).getText().isEmpty(), "Element is empty");
         }
     }
+    public void controlSaveBasicInformation() {
+        Assertions.assertTrue(driver.findElement(By.cssSelector(String.format(countryInputSelector))).isDisplayed(), "Element is not displayed");
+        Assertions.assertTrue(!driver.findElement(By.cssSelector(String.format(countryInputSelector))).getText().isEmpty(), "Element is empty");
+
+        Assertions.assertTrue(driver.findElement(By.cssSelector(String.format(cityInputSelector))).isDisplayed(), "Element is not displayed");
+        Assertions.assertTrue(!driver.findElement(By.cssSelector(String.format(cityInputSelector))).getText().isEmpty(), "Element is empty");
+
+        Assertions.assertTrue(driver.findElement(By.cssSelector(String.format(englishLevelInputLocator))).isDisplayed(), "Element is not displayed");
+        Assertions.assertTrue(!driver.findElement(By.cssSelector(String.format(englishLevelInputLocator))).getText().isEmpty(), "Element is empty");
+
+        Assertions.assertTrue(driver.findElement(By.cssSelector(String.format(fieldGenderId))).isDisplayed(), "Element is not displayed");
+        Assertions.assertTrue(!driver.findElement(By.cssSelector(String.format(fieldGenderId))).getText().isEmpty(), "Element is empty");
+    }
+
+
 }
+
+
 
