@@ -18,7 +18,6 @@ public class LkBiographyPage extends AbsBasePage {
     private String englishLevelInputLocator = "//input[@name ='english_level']/following::*";
     private String fieldGenderId = "id_gender";
 
-
     public LkBiographyPage(WebDriver driver) {
         super(driver);
     }
@@ -138,6 +137,10 @@ public class LkBiographyPage extends AbsBasePage {
         Assertions.assertTrue(!driver.findElement(By.cssSelector(String.format(fieldGenderId))).getText().isEmpty(), "Element is empty");
     }
 
+    public boolean controlRelocateIsSelected() {
+              WebElement relocateElement = driver.findElement(By.xpath("//span[@class='radio__label' and text()='Да'"));
+            return relocateElement.isSelected();
+        }
 
 }
 

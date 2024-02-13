@@ -55,6 +55,8 @@ public class LkPersonalControlTest {
 
         biographyPage.controlSaveBasicInformation();
 
+        biographyPage.controlRelocateIsSelected();
+
         contactInfo.controlSaveContactInformation(NumberFormInputData.FORM1,
                 NumberFormInputData.FORM2, NumberFormInputData.FORM3);
 
