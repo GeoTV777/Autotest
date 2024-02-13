@@ -65,7 +65,7 @@ public class LkBiographyTest {
         homePage.setSelectTabAboutMe();
 
 
-        biographyPage.clearPersData(PersonalData.NAME, PersonalData.SURNAME, PersonalData.NAMECHAT);
+        biographyPage.clearPersData(PersonalData.NAME, PersonalData.NAMECHAT);
 
 
         biographyPage.inputFio(PersonalData.NAME, faker.name().firstName());
@@ -97,6 +97,31 @@ public class LkBiographyTest {
         contactInfo.addContactInfoForm(NumberFormInputData.FORM3,CommunicationMethodData.HABR,faker.idNumber().valid());
 
         biographyPage.save();
+    }
+    @Test
+    public void saveControl() {
+        AbsBasePage basePage = new AbsBasePage(driver);
+        SingInPopup singInPopup = new SingInPopup(driver);
+        ContactInfo contactInfo = new ContactInfo(driver);
+        LkBiographyPage biographyPage = new LkBiographyPage(driver);
+
+
+
+        basePage.open();
+        singInPopup.authorization();
+
+        basePage.open("/lk/biography/personal/");
+
+        biographyPage.controlSavePersonal(PersonalData.NAME,PersonalData.SURNAME, PersonalData.NAMELAT,
+                PersonalData.SURNAMELAT, PersonalData.NAMECHAT, PersonalData.DATE);
+
+        biographyPage.controlSaveBasicInformation();
+
+        biographyPage.controlRelocateIsSelected();
+
+        contactInfo.controlSaveContactInformation(NumberFormInputData.FORM1,
+                NumberFormInputData.FORM2, NumberFormInputData.FORM3);
+
     }
 
 }
