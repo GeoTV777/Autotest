@@ -46,8 +46,10 @@ public class ContactInfo extends AbsCommon {
 
     public void controlSaveContactInformation(NumberFormInputData...formInputData) {
         for (NumberFormInputData formInputData1 : formInputData) {
-        Assertions.assertTrue(driver.findElement(By.cssSelector(String.format(inputFormLocator, formInputData1.getName()))).isDisplayed(), "Element is not displayed");
-        Assertions.assertTrue(!driver.findElement(By.cssSelector(String.format(inputFormLocator, formInputData1.getName()))).getText().isEmpty(), "Element is empty");
+            WebElement numberInput = driver.findElement(By.xpath(String.format(inputFormLocator,formInputData1.getName())));
+        Assertions.assertTrue(numberInput.isDisplayed(), "Element is not displayed");
+        String value = numberInput.getAttribute("value");
+        Assertions.assertTrue(value!=null && !value.isEmpty(), "Element is empty");
         }
     }
 }

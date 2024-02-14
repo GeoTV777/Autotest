@@ -9,9 +9,7 @@ import factory.settings.ChromeDriverSettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.junit.FixMethodOrder;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import pages.AbsBasePage;
@@ -21,7 +19,7 @@ import pages.LkHomePage;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class LkBiographyTest {
     private WebDriver driver;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
@@ -37,13 +35,14 @@ public class LkBiographyTest {
     @AfterEach
     public void driverStop() {
         if (driver != null) {
+            driver.close();
+            driver.quit();
             logger.info("Close browser");
-//            driver.close();
-//            driver.quit();
         }
     }
 
     @Test
+    @Order(1)
     public void authHomepage() {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);
@@ -55,8 +54,8 @@ public class LkBiographyTest {
         ICityData city = faker.options().nextElement(cityData);
 
         basePage.open();
-        singInPopup.authorization();
-        singInPopup.isAuthorized();
+
+        singInPopup.auth();
 
         singInPopup.enterHeaderIconOwl();
 
@@ -99,18 +98,17 @@ public class LkBiographyTest {
         biographyPage.save();
     }
     @Test
+    @Order(1)
     public void saveControl() {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);
         ContactInfo contactInfo = new ContactInfo(driver);
         LkBiographyPage biographyPage = new LkBiographyPage(driver);
-
-
-
-        basePage.open();
-        singInPopup.authorization();
+        LkHomePage homePage = new LkHomePage(driver);
 
         basePage.open("/lk/biography/personal/");
+        singInPopup.transitionToPersonalData();
+        homePage.setSelectTabAboutMe();
 
         biographyPage.controlSavePersonal(PersonalData.NAME,PersonalData.SURNAME, PersonalData.NAMELAT,
                 PersonalData.SURNAMELAT, PersonalData.NAMECHAT, PersonalData.DATE);
@@ -118,6 +116,7 @@ public class LkBiographyTest {
         biographyPage.controlSaveBasicInformation();
 
         biographyPage.controlRelocateIsSelected();
+        biographyPage.controlSelectWorkGraph(true, WorkGraphData.FLEXIBLE);
 
         contactInfo.controlSaveContactInformation(NumberFormInputData.FORM1,
                 NumberFormInputData.FORM2, NumberFormInputData.FORM3);

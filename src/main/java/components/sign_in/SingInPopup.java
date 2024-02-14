@@ -25,18 +25,22 @@ public class SingInPopup extends AbsCommon implements IPopup {
         super(driver);
     }
 
-    public void authorization(){
+    public void pressHeaderSignInButton() {
         String headerSignInButton = "//button[text()='Войти']";
+        waitTools.waitElementPresent(By.xpath(headerSignInButton));
+        driver.findElement(By.xpath(headerSignInButton)).click();
+        logger.info("Login button pressed");
+
+    }
+
+    public void authorization(){
+
         String inputNameClickLocator = "//input[@name]/..";
         String inputNameLocator = "//input[@name]";
         String warningNameSelector = "[fill-rule='nonzero']";
         String inputPassClickLocator = "//input[@type='password']/..";
         String inputPassLocator = "//input[@type='password']";
         String btnEntrySelector ="#__PORTAL__ button";
-
-        waitTools.waitElementPresent(By.xpath(headerSignInButton));
-        driver.findElement(By.xpath(headerSignInButton)).click();
-        logger.info("Login button pressed");
 
         popupShouldBeVisible();
 
@@ -79,6 +83,26 @@ public class SingInPopup extends AbsCommon implements IPopup {
         waitTools.waitElementToBeClickable(By.xpath(buttonLkLocator));
         driver.findElement(By.xpath(buttonLkLocator)).click();
         logger.info("LK is open");
+    }
+    public void auth(){
+        pressHeaderSignInButton();
+        authorization();
+    }
+
+    public void transitionToPersonalData() {
+        String headerIconPinkOwlSelector ="[class='sc-1ceoo74-1 cQzahz']";
+
+        pressHeaderSignInButton();
+        authorization();
+
+        waitTools.waitElementToBeClickable(By.cssSelector(headerIconPinkOwlSelector));
+        logger.info("Authorization completed");
+        WebElement element = driver.findElement(By.cssSelector(headerIconPinkOwlSelector));
+        actions.moveToElement(element).perform();
+        logger.info("Owl button hovered");
+
+        selectLkInMenu();
+
     }
 
 
