@@ -89,7 +89,6 @@ public class LkBiographyPage extends AbsBasePage {
     public void selectWorkGraph(boolean isSelected, WorkGraphData... workGraphDatas) {
 
         for (WorkGraphData workGraphData : workGraphDatas) {
-
             WebElement checkBox = driver.findElement(By.cssSelector(String.format("input[title='%s']+*", workGraphData.getName())));
 
             if (checkBox.isSelected() != isSelected) {
@@ -121,9 +120,9 @@ public class LkBiographyPage extends AbsBasePage {
 
     public void controlSavePersonal(PersonalData... personalData) {
         for (PersonalData personalData1 : personalData) {
-            WebElement element = driver.findElement(By.cssSelector(String.format(personalDataInputSelector, personalData1.getName())));
-            Assertions.assertTrue(element.isDisplayed(), "Element is not displayed");
-            String value = element.getAttribute("value");
+            WebElement personalElement = driver.findElement(By.cssSelector(String.format(personalDataInputSelector, personalData1.getName())));
+            Assertions.assertTrue(personalElement.isDisplayed(), "Element is not displayed");
+            String value = personalElement.getAttribute("value");
             Assertions.assertTrue(value != null && !value.isEmpty(), "Element is empty");
         }
     }
@@ -154,12 +153,11 @@ public class LkBiographyPage extends AbsBasePage {
 
     public void controlSelectWorkGraph(boolean isSelected, WorkGraphData... workGraphDatas) {
         for (WorkGraphData workGraphData : workGraphDatas) {
-            WebElement checkBox = driver.findElement(By.cssSelector(String.format("input[title='%s']+*", workGraphData.getName())));
+            WebElement checkBox = driver.findElement(By.cssSelector(String.format("input[title='%s']", workGraphData.getName())));
             boolean checkBoxSelected = checkBox.isSelected();
             Assertions.assertTrue(isSelected == checkBoxSelected,"Checkbox is not selected");
         }
     }
-
 }
 
 

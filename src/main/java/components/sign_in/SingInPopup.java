@@ -105,7 +105,6 @@ public class SingInPopup extends AbsCommon implements IPopup {
 
     }
 
-
     @Override
     public void popupShouldNotBeVisible() {
         Assertions.assertFalse(waitTools.waitForCondition(ExpectedConditions.not

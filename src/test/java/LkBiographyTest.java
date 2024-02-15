@@ -64,7 +64,7 @@ public class LkBiographyTest {
         homePage.setSelectTabAboutMe();
 
 
-        biographyPage.clearPersData(PersonalData.NAME, PersonalData.NAMECHAT);
+        biographyPage.clearPersData(PersonalData.NAME, PersonalData.SURNAME);
 
 
         biographyPage.inputFio(PersonalData.NAME, faker.name().firstName());
@@ -83,7 +83,7 @@ public class LkBiographyTest {
 
         biographyPage.selectToRelocate(Boolean.parseBoolean(String.valueOf(true)));
 
-        biographyPage.selectWorkGraph(true, WorkGraphData.FLEXIBLE);
+        biographyPage.selectWorkGraph(true, WorkGraphData.FULL);
         biographyPage.selectGender();
 
         biographyPage.inputPlaceOfWorkAndPosition(WorkData.COMPANY,faker.commerce().department());
@@ -116,7 +116,7 @@ public class LkBiographyTest {
         biographyPage.controlSaveBasicInformation();
 
         biographyPage.controlRelocateIsSelected();
-        biographyPage.controlSelectWorkGraph(true, WorkGraphData.FLEXIBLE);
+        biographyPage.controlSelectWorkGraph(true, WorkGraphData.FULL);
 
         contactInfo.controlSaveContactInformation(NumberFormInputData.FORM1,
                 NumberFormInputData.FORM2, NumberFormInputData.FORM3);
