@@ -1,9 +1,7 @@
 package pages;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import data.personal.*;
 import data.sities.ICityData;
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +11,6 @@ import org.openqa.selenium.support.ui.Select;
 
 
 public class LkBiographyPage extends AbsBasePage {
-
     private String personalDataInputSelector = "input[name='%s']";
     private String countryInputSelector = "[data-slave-selector='.js-lk-cv-dependent-slave-city']";
     private String cityInputSelector = "[name='city']+*";
@@ -35,7 +32,6 @@ public class LkBiographyPage extends AbsBasePage {
     public void inputFio(PersonalData personalData, String data) {
         driver.findElement(By.cssSelector(String.format(personalDataInputSelector, personalData.getName()))).sendKeys(data);
         logger.info("Data is filled in");
-
     }
 
 
@@ -54,7 +50,6 @@ public class LkBiographyPage extends AbsBasePage {
         waitTools.waitForCondition(ExpectedConditions.attributeContains(
                 By.cssSelector("[data-title='Город']"), "disabled", "disabled"));
 
-
         WebElement citySelectElement = driver.findElement(By.cssSelector(cityInputSelector));
         citySelectElement.click();
 
@@ -64,9 +59,7 @@ public class LkBiographyPage extends AbsBasePage {
         driver.findElement(By.cssSelector(String.format("[title='%s']", cityData.getName()))).click();
         waitTools.waitForCondition(ExpectedConditions.attributeContains(citiListContainer, "class", "hide"));
         logger.info("City selected");
-
     }
-
 
     public void selectEnglishLevel(EnglishLevelData englishLevelData) {
         WebElement selectEnglishLevel = driver.findElement(By.xpath(englishLevelInputLocator));

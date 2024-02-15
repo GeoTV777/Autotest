@@ -8,14 +8,11 @@ import factory.DriverFactory;
 import factory.settings.ChromeDriverSettings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
-import org.junit.FixMethodOrder;
 import org.junit.jupiter.api.*;
-import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebDriver;
 import pages.AbsBasePage;
 import pages.LkBiographyPage;
 import pages.LkHomePage;
-
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
@@ -76,7 +73,6 @@ public class LkBiographyTest {
         biographyPage.inputFio(PersonalData.DATE, faker.date().birthday().toInstant().atZone
                 (ZoneId.systemDefault()).toLocalDate().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")));
 
-
         biographyPage.selectCountryAbdCity(city);
 
         biographyPage.selectEnglishLevel(EnglishLevelData.INTERMEDIATE);
@@ -98,7 +94,7 @@ public class LkBiographyTest {
         biographyPage.save();
     }
     @Test
-    @Order(1)
+    @Order(2)
     public void saveControl() {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);
@@ -120,7 +116,5 @@ public class LkBiographyTest {
 
         contactInfo.controlSaveContactInformation(NumberFormInputData.FORM1,
                 NumberFormInputData.FORM2, NumberFormInputData.FORM3);
-
     }
-
 }

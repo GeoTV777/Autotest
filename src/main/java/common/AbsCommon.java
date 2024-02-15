@@ -1,13 +1,10 @@
 package common;
 
-import com.github.javafaker.Faker;
-import factory.logger.LoggerManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.slf4j.LoggerFactory;
 import tools.WaitTools;
 
 public class AbsCommon {

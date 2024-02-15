@@ -1,9 +1,6 @@
 package pages;
 
 import common.AbsCommon;
-import factory.logger.LoggerManager;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.core.Logger;
 import org.openqa.selenium.WebDriver;
 
 public class AbsBasePage extends AbsCommon {

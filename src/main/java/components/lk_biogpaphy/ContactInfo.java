@@ -3,12 +3,10 @@ package components.lk_biogpaphy;
 import common.AbsCommon;
 import data.personal.CommunicationMethodData;
 import data.personal.NumberFormInputData;
-import data.personal.PersonalData;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ContactInfo extends AbsCommon {
     private String inputFormLocator ="//input[contains(@id,'id_contact-%s-value')]";
@@ -29,7 +27,6 @@ public class ContactInfo extends AbsCommon {
         WebElement listContainerMethod = driver.findElement(By.xpath("//div[contains(@class,'k-cv-block__select-options_left js-custom-select-options-container')]"));
 
         WebElement selectElement = inputForm.findElement(By.xpath(String.format(".//..//button[contains(@data-value,'%s')]", communicationMethodData.getName())));
-//        waitTools.waitElementToBeClickable(By.xpath(String.format(String.valueOf(selectElement))));
         selectElement.click();
 
 

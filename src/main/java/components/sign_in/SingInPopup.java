@@ -2,16 +2,11 @@ package components.sign_in;
 
 import common.AbsCommon;
 import components.IPopup;
-import org.bouncycastle.pqc.crypto.util.PQCOtherInfoGenerator;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import java.util.List;
-import java.util.NoSuchElementException;
 
 public class SingInPopup extends AbsCommon implements IPopup {
     private String login= System.getProperty("login");
@@ -37,7 +32,6 @@ public class SingInPopup extends AbsCommon implements IPopup {
 
         String inputNameClickLocator = "//input[@name]/..";
         String inputNameLocator = "//input[@name]";
-        String warningNameSelector = "[fill-rule='nonzero']";
         String inputPassClickLocator = "//input[@type='password']/..";
         String inputPassLocator = "//input[@type='password']";
         String btnEntrySelector ="#__PORTAL__ button";
@@ -58,16 +52,6 @@ public class SingInPopup extends AbsCommon implements IPopup {
         waitTools.waitElementToBeClickable(By.cssSelector(btnEntrySelector));
         driver.findElement(By.cssSelector(btnEntrySelector)).click();
         logger.info("Button Ok");
-    }
-
-    public boolean isAuthorized() {
-        try {
-            waitTools.waitElementPresent(By.cssSelector(headerIconOwlSelector));
-            return true;
-
-        } catch (NoSuchElementException e) {
-            return false;
-        }
     }
 
     public void enterHeaderIconOwl() {
@@ -102,7 +86,6 @@ public class SingInPopup extends AbsCommon implements IPopup {
         logger.info("Owl button hovered");
 
         selectLkInMenu();
-
     }
 
     @Override
