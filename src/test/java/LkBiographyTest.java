@@ -16,11 +16,9 @@ import pages.LkHomePage;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class LkBiographyTest {
     private WebDriver driver;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
-
 
     @BeforeEach
     public void init() {
@@ -39,7 +37,6 @@ public class LkBiographyTest {
     }
 
     @Test
-    @Order(1)
     public void authHomepage() {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);
@@ -60,7 +57,6 @@ public class LkBiographyTest {
 
         homePage.setSelectTabAboutMe();
 
-
         biographyPage.clearPersData(PersonalData.NAME, PersonalData.SURNAME);
 
 
@@ -77,7 +73,7 @@ public class LkBiographyTest {
 
         biographyPage.selectEnglishLevel(EnglishLevelData.INTERMEDIATE);
 
-        biographyPage.selectToRelocate(Boolean.parseBoolean(String.valueOf(true)));
+        biographyPage.selectToRelocate(true);
 
         biographyPage.selectWorkGraph(true, WorkGraphData.FULL);
         biographyPage.selectGender();
@@ -94,7 +90,6 @@ public class LkBiographyTest {
         biographyPage.save();
     }
     @Test
-    @Order(2)
     public void saveControl() {
         AbsBasePage basePage = new AbsBasePage(driver);
         SingInPopup singInPopup = new SingInPopup(driver);

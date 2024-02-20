@@ -65,13 +65,11 @@ public class LkBiographyPage extends AbsBasePage {
         WebElement selectEnglishLevel = driver.findElement(By.xpath(englishLevelInputLocator));
         selectEnglishLevel.click();
 
-        WebElement levelListContainer = driver.findElement
-                (By.xpath("//div[contains(@class,'lk-cv-block__select-options js-custom-select-options-container')]"));
+        WebElement levelListContainer = driver.findElement(By.xpath("//input[@name='english_level']/following::div[2]"));
         waitTools.waitForCondition(ExpectedConditions.not(ExpectedConditions.attributeContains(levelListContainer, "class", "hide")));
         driver.findElement(By.cssSelector(String.format("[title='%s']", englishLevelData.getName()))).click();
         logger.info("Level English selected");
     }
-
 
     public void selectToRelocate(boolean isSelected) {
         String relocate = isSelected ? "Да" : "Нет";
