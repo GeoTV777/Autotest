@@ -16,6 +16,7 @@ import pages.LkHomePage;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
+
 public class LkBiographyTest {
     private WebDriver driver;
     private Logger logger = (Logger) LogManager.getLogger("Autotest");
@@ -38,7 +39,7 @@ public class LkBiographyTest {
 
     @Test
     public void authHomepage() {
-        AbsBasePage basePage = new AbsBasePage(driver);
+        new LkHomePage(driver).open();
         SingInPopup singInPopup = new SingInPopup(driver);
         LkHomePage homePage = new LkHomePage(driver);
         LkBiographyPage biographyPage = new LkBiographyPage(driver);
@@ -47,7 +48,7 @@ public class LkBiographyTest {
         ICityData[] cityData= RussianCitiesData.values();
         ICityData city = faker.options().nextElement(cityData);
 
-        basePage.open();
+        homePage.open();
 
         singInPopup.auth();
 
@@ -91,13 +92,13 @@ public class LkBiographyTest {
     }
     @Test
     public void saveControl() {
-        AbsBasePage basePage = new AbsBasePage(driver);
+        new LkBiographyPage(driver).open();
         SingInPopup singInPopup = new SingInPopup(driver);
         ContactInfo contactInfo = new ContactInfo(driver);
         LkBiographyPage biographyPage = new LkBiographyPage(driver);
         LkHomePage homePage = new LkHomePage(driver);
 
-        basePage.open("/lk/biography/personal/");
+        biographyPage.open("/lk/biography/personal/");
         singInPopup.transitionToPersonalData();
         homePage.setSelectTabAboutMe();
 

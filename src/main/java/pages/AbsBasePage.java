@@ -3,7 +3,7 @@ package pages;
 import common.AbsCommon;
 import org.openqa.selenium.WebDriver;
 
-public class AbsBasePage extends AbsCommon {
+public abstract class AbsBasePage extends AbsCommon {
     private String BASE_URL = System.getProperty("base.url");
 
     public AbsBasePage(WebDriver driver){
